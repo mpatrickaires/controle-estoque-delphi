@@ -1,7 +1,7 @@
 # Sistema de Controle de Estoque em Delphi
 ---
 ## Olá! Bem-vindo(a) ao meu repositório.
-<img align="right" src="https://p7.hiclipart.com/preview/202/343/779/inventory-management-software-warehouse-management-system-warehouse.jpg" width="250">
+<img align="right" src="https://imgur.com/a/99u0tni" width="250">
 
 Neste repositório estarão os arquivos dos códigos **Pascal**, programado em **Delphi** e integrado com os formulários criados dentro da IDE e com o
 Banco de Dados **Firebird**. 
