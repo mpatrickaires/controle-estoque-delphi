@@ -1,7 +1,7 @@
 # Sistema de Controle de Estoque em Delphi
 ---
 ## Olá! Bem-vindo(a) ao meu repositório.
-<img align="right" src="https://i.imgur.com/xfoXVuV.png" width="250">
+<img align="right" src="https://i.imgur.com/xfoXVuV.png" width="370">
 
 Neste repositório estarão os arquivos dos códigos **Pascal**, programado em **Delphi** e integrado com os formulários criados dentro da IDE e com o
 Banco de Dados **Firebird**. 
