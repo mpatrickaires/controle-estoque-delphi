@@ -1,0 +1,372 @@
+inherited frmEmpresa: TfrmEmpresa
+  Caption = 'Cadastro de Empresa'
+  ClientHeight = 532
+  ClientWidth = 825
+  ExplicitWidth = 831
+  ExplicitHeight = 561
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel [0]
+    Left = 56
+    Top = 80
+    Width = 63
+    Height = 13
+    Caption = 'ID_EMPRESA'
+    FocusControl = edtID
+  end
+  object Label2: TLabel [1]
+    Left = 56
+    Top = 128
+    Width = 78
+    Height = 13
+    Caption = 'RAZAO_SOCIAL'
+    FocusControl = edtRazaoSocial
+  end
+  object Label3: TLabel [2]
+    Left = 56
+    Top = 176
+    Width = 63
+    Height = 13
+    Caption = 'N_FANTASIA'
+    FocusControl = edtNomeFantasia
+  end
+  object Label4: TLabel [3]
+    Left = 56
+    Top = 224
+    Width = 54
+    Height = 13
+    Caption = 'ENDERECO'
+    FocusControl = edtEndereco
+  end
+  object Label5: TLabel [4]
+    Left = 422
+    Top = 224
+    Width = 43
+    Height = 13
+    Caption = 'NUMERO'
+    FocusControl = edtNumero
+  end
+  object Label6: TLabel [5]
+    Left = 56
+    Top = 272
+    Width = 39
+    Height = 13
+    Caption = 'BAIRRO'
+    FocusControl = edtBairro
+  end
+  object Label7: TLabel [6]
+    Left = 56
+    Top = 320
+    Width = 38
+    Height = 13
+    Caption = 'CIDADE'
+    FocusControl = edtCidade
+  end
+  object Label8: TLabel [7]
+    Left = 526
+    Top = 320
+    Width = 13
+    Height = 13
+    Caption = 'UF'
+    FocusControl = edtUF
+  end
+  object Label9: TLabel [8]
+    Left = 56
+    Top = 371
+    Width = 19
+    Height = 13
+    Caption = 'CEP'
+    FocusControl = edtCEP
+  end
+  object Label10: TLabel [9]
+    Left = 229
+    Top = 368
+    Width = 50
+    Height = 13
+    Caption = 'TELEFONE'
+    FocusControl = edtTelefone
+  end
+  object Label11: TLabel [10]
+    Left = 400
+    Top = 369
+    Width = 25
+    Height = 13
+    Caption = 'CNPJ'
+    FocusControl = edtCNPJ
+  end
+  object Label12: TLabel [11]
+    Left = 56
+    Top = 419
+    Width = 30
+    Height = 13
+    Caption = 'EMAIL'
+    FocusControl = edtEmail
+  end
+  object Label13: TLabel [12]
+    Left = 584
+    Top = 112
+    Width = 28
+    Height = 13
+    Caption = 'LOGO'
+    FocusControl = imgLogo
+  end
+  object Label14: TLabel [13]
+    Left = 206
+    Top = 80
+    Width = 55
+    Height = 13
+    Caption = 'CADASTRO'
+    FocusControl = edtCadastro
+  end
+  inherited Panel1: TPanel
+    Width = 825
+    TabOrder = 14
+  end
+  inherited Panel2: TPanel
+    Top = 475
+    Width = 825
+    TabOrder = 15
+    inherited DBNavigator1: TDBNavigator
+      Hints.Strings = ()
+    end
+  end
+  object edtID: TDBEdit [16]
+    Left = 56
+    Top = 96
+    Width = 134
+    Height = 21
+    DataField = 'ID_EMPRESA'
+    DataSource = dsPadrao
+    TabOrder = 0
+  end
+  object edtRazaoSocial: TDBEdit [17]
+    Left = 56
+    Top = 144
+    Width = 500
+    Height = 21
+    DataField = 'RAZAO_SOCIAL'
+    DataSource = dsPadrao
+    TabOrder = 2
+  end
+  object edtNomeFantasia: TDBEdit [18]
+    Left = 56
+    Top = 192
+    Width = 500
+    Height = 21
+    DataField = 'N_FANTASIA'
+    DataSource = dsPadrao
+    TabOrder = 3
+  end
+  object edtEndereco: TDBEdit [19]
+    Left = 56
+    Top = 240
+    Width = 345
+    Height = 21
+    DataField = 'ENDERECO'
+    DataSource = dsPadrao
+    TabOrder = 4
+  end
+  object edtNumero: TDBEdit [20]
+    Left = 422
+    Top = 240
+    Width = 134
+    Height = 21
+    DataField = 'NUMERO'
+    DataSource = dsPadrao
+    TabOrder = 5
+  end
+  object edtBairro: TDBEdit [21]
+    Left = 56
+    Top = 288
+    Width = 500
+    Height = 21
+    DataField = 'BAIRRO'
+    DataSource = dsPadrao
+    TabOrder = 6
+  end
+  object edtCidade: TDBEdit [22]
+    Left = 56
+    Top = 339
+    Width = 450
+    Height = 21
+    DataField = 'CIDADE'
+    DataSource = dsPadrao
+    TabOrder = 7
+  end
+  object edtUF: TDBEdit [23]
+    Left = 526
+    Top = 336
+    Width = 30
+    Height = 21
+    DataField = 'UF'
+    DataSource = dsPadrao
+    TabOrder = 8
+  end
+  object edtCEP: TDBEdit [24]
+    Left = 56
+    Top = 387
+    Width = 153
+    Height = 21
+    DataField = 'CEP'
+    DataSource = dsPadrao
+    TabOrder = 9
+  end
+  object edtTelefone: TDBEdit [25]
+    Left = 229
+    Top = 387
+    Width = 153
+    Height = 21
+    DataField = 'TELEFONE'
+    DataSource = dsPadrao
+    TabOrder = 10
+  end
+  object edtCNPJ: TDBEdit [26]
+    Left = 400
+    Top = 387
+    Width = 156
+    Height = 21
+    DataField = 'CNPJ'
+    DataSource = dsPadrao
+    TabOrder = 11
+  end
+  object edtEmail: TDBEdit [27]
+    Left = 56
+    Top = 435
+    Width = 500
+    Height = 21
+    DataField = 'EMAIL'
+    DataSource = dsPadrao
+    TabOrder = 12
+  end
+  object imgLogo: TDBImage [28]
+    Left = 584
+    Top = 128
+    Width = 105
+    Height = 105
+    DataField = 'LOGO'
+    DataSource = dsPadrao
+    TabOrder = 13
+  end
+  object edtCadastro: TDBEdit [29]
+    Left = 206
+    Top = 96
+    Width = 134
+    Height = 21
+    DataField = 'CADASTRO'
+    DataSource = dsPadrao
+    TabOrder = 1
+  end
+  object BitBtn1: TBitBtn [30]
+    Left = 584
+    Top = 240
+    Width = 75
+    Height = 25
+    Caption = 'BitBtn1'
+    TabOrder = 16
+  end
+  object BitBtn2: TBitBtn [31]
+    Left = 584
+    Top = 286
+    Width = 75
+    Height = 25
+    Caption = 'BitBtn1'
+    TabOrder = 17
+  end
+  inherited qryPadrao: TFDQuery
+    UpdateOptions.AssignedValues = [uvFetchGeneratorsPoint, uvGeneratorName]
+    UpdateOptions.FetchGeneratorsPoint = gpImmediate
+    UpdateOptions.GeneratorName = 'GEN_ID_TBLEMPRESA'
+    UpdateOptions.AutoIncFields = 'ID_EMPRESA'
+    SQL.Strings = (
+      'SELECT * FROM TBLEMPRESA')
+    Left = 592
+    Top = 64
+    object qryPadraoID_EMPRESA: TIntegerField
+      FieldName = 'ID_EMPRESA'
+      Origin = 'ID_EMPRESA'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object qryPadraoRAZAO_SOCIAL: TStringField
+      FieldName = 'RAZAO_SOCIAL'
+      Origin = 'RAZAO_SOCIAL'
+      Required = True
+      Size = 100
+    end
+    object qryPadraoN_FANTASIA: TStringField
+      FieldName = 'N_FANTASIA'
+      Origin = 'N_FANTASIA'
+      Required = True
+      Size = 100
+    end
+    object qryPadraoENDERECO: TStringField
+      FieldName = 'ENDERECO'
+      Origin = 'ENDERECO'
+      Required = True
+      Size = 100
+    end
+    object qryPadraoNUMERO: TIntegerField
+      FieldName = 'NUMERO'
+      Origin = 'NUMERO'
+      Required = True
+    end
+    object qryPadraoBAIRRO: TStringField
+      FieldName = 'BAIRRO'
+      Origin = 'BAIRRO'
+      Required = True
+      Size = 100
+    end
+    object qryPadraoCIDADE: TStringField
+      FieldName = 'CIDADE'
+      Origin = 'CIDADE'
+      Required = True
+      Size = 100
+    end
+    object qryPadraoUF: TStringField
+      FieldName = 'UF'
+      Origin = 'UF'
+      Required = True
+      FixedChar = True
+      Size = 2
+    end
+    object qryPadraoCEP: TStringField
+      FieldName = 'CEP'
+      Origin = 'CEP'
+      Required = True
+      EditMask = '00000\-999;0;_'
+      Size = 14
+    end
+    object qryPadraoTELEFONE: TStringField
+      FieldName = 'TELEFONE'
+      Origin = 'TELEFONE'
+      Required = True
+      EditMask = '!\(99\)0000-0000;0;_'
+      Size = 15
+    end
+    object qryPadraoCNPJ: TStringField
+      FieldName = 'CNPJ'
+      Origin = 'CNPJ'
+      Required = True
+      EditMask = '00.000.000/0000-00;0;_'
+    end
+    object qryPadraoEMAIL: TStringField
+      FieldName = 'EMAIL'
+      Origin = 'EMAIL'
+      Required = True
+      Size = 100
+    end
+    object qryPadraoLOGO: TBlobField
+      FieldName = 'LOGO'
+      Origin = 'LOGO'
+    end
+    object qryPadraoCADASTRO: TDateField
+      FieldName = 'CADASTRO'
+      Origin = 'CADASTRO'
+      Required = True
+    end
+  end
+  inherited dsPadrao: TDataSource
+    Left = 664
+    Top = 64
+  end
+end
