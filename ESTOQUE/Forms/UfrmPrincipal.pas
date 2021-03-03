@@ -41,12 +41,16 @@ type
     ListaCompras1: TMenuItem;
     ListaVendas1: TMenuItem;
     Sobre1: TMenuItem;
+    procedure abreTelaUsuario;
+    procedure abreTelaEmpresa;
     procedure Timer1Timer(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure btnSairClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure btnUsuarioClick(Sender: TObject);
-    procedure abreTelaUsuario;
+    procedure btnEmpresaClick(Sender: TObject);
+    procedure Usurio1Click(Sender: TObject);
+    procedure Empresa1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -60,11 +64,16 @@ implementation
 
 {$R *.dfm}
 
-uses UfrmUsuario;
+uses UfrmUsuario, UfrmEmpresa;
 
 procedure TfrmPrincipal.Button1Click(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TfrmPrincipal.Empresa1Click(Sender: TObject);
+begin
+  abreTelaEmpresa;
 end;
 
 procedure TfrmPrincipal.FormCreate(Sender: TObject);
@@ -72,6 +81,18 @@ begin
   StatusBar1.Panels[0].Text := DateToStr(Now);
   StatusBar1.Panels[1].Text := TimeToStr(Now);
   StatusBar1.Panels[2].Text := 'Seja bem-vindo ao sistema!';
+end;
+
+procedure TfrmPrincipal.abreTelaEmpresa;
+begin
+  frmEmpresa := TfrmEmpresa.Create(Self);
+
+  try
+    frmEmpresa.ShowModal;
+  finally
+    frmEmpresa.Free;
+    frmEmpresa := nil;
+  end;
 end;
 
 procedure TfrmPrincipal.abreTelaUsuario;
@@ -84,6 +105,11 @@ begin
     frmUsuario.Free;
     frmUsuario := nil;
   end;
+end;
+
+procedure TfrmPrincipal.btnEmpresaClick(Sender: TObject);
+begin
+  abreTelaEmpresa;
 end;
 
 procedure TfrmPrincipal.btnSairClick(Sender: TObject);
@@ -108,6 +134,11 @@ begin
   StatusBar1.Panels[0].Text := DateToStr(Now);
   StatusBar1.Panels[1].Text := TimeToStr(Now);
 
+end;
+
+procedure TfrmPrincipal.Usurio1Click(Sender: TObject);
+begin
+  abreTelaUsuario;
 end;
 
 end.

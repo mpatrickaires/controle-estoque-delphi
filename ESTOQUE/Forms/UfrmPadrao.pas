@@ -54,7 +54,7 @@ begin
   // Atualiza os registros
   trataBotoes;
   qryPadrao.Refresh;
-  MessageBox(Handle, 'Registros atualizados com sucesso!', 'Atualizar Registros',
+  MessageBox(Handle, 'Registro atualizados com sucesso!', 'Atualizar Registros',
   MB_ICONINFORMATION + MB_OK);
 end;
 

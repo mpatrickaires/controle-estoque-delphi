@@ -959,6 +959,7 @@ object frmPrincipal: TfrmPrincipal
         000000000000}
       Layout = blGlyphTop
       ParentFont = False
+      OnClick = btnEmpresaClick
     end
     object btnClientes: TSpeedButton
       Left = 212
@@ -4851,9 +4852,11 @@ object frmPrincipal: TfrmPrincipal
       Caption = 'Cadastro'
       object Usurio1: TMenuItem
         Caption = '&Usu'#225'rio'
+        OnClick = Usurio1Click
       end
       object Empresa1: TMenuItem
         Caption = '&Empresa'
+        OnClick = Empresa1Click
       end
       object Cliente1: TMenuItem
         Caption = '&Clientes'
