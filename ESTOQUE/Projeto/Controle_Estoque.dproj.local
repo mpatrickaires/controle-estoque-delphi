@@ -3,14 +3,17 @@
 	<Transactions>
     <Transaction>2021/02/27 23:21:28.000.392,=C:\Users\mathe\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2021/02/28 15:56:34.000.956,=C:\Users\mathe\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2021/02/28 15:59:50.000.779,C:\Users\mathe\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm=M:\sistema-estoque-delphi_udemy\ESTOQUE\Forms\UfrmPrincipal.dfm</Transaction>
-    <Transaction>2021/02/28 15:59:50.000.779,C:\Users\mathe\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas=M:\sistema-estoque-delphi_udemy\ESTOQUE\Forms\UfrmPrincipal.pas</Transaction>
-    <Transaction>2021/02/28 16:00:21.000.527,C:\Users\mathe\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj=M:\sistema-estoque-delphi_udemy\ESTOQUE\Projeto\Controle_Estoque.dproj</Transaction>
+    <Transaction>2021/02/28 15:59:50.000.779,M:\sistema-estoque-delphi_udemy\ESTOQUE\Forms\UfrmPrincipal.pas=C:\Users\mathe\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/02/28 15:59:50.000.779,M:\sistema-estoque-delphi_udemy\ESTOQUE\Forms\UfrmPrincipal.dfm=C:\Users\mathe\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2021/02/28 16:00:21.000.527,M:\sistema-estoque-delphi_udemy\ESTOQUE\Projeto\Controle_Estoque.dproj=C:\Users\mathe\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
     <Transaction>2021/02/28 18:13:50.000.215,=M:\sistema-estoque-delphi_udemy\ESTOQUE\Projeto\Unit1.pas</Transaction>
-    <Transaction>2021/02/28 18:15:24.000.496,M:\sistema-estoque-delphi_udemy\ESTOQUE\Projeto\Unit1.dfm=M:\sistema-estoque-delphi_udemy\ESTOQUE\Forms\uDM.dfm</Transaction>
-    <Transaction>2021/02/28 18:15:24.000.496,M:\sistema-estoque-delphi_udemy\ESTOQUE\Projeto\Unit1.pas=M:\sistema-estoque-delphi_udemy\ESTOQUE\Forms\uDM.pas</Transaction>
-    <Transaction>2021/03/02 16:56:44.215,=M:\sistema-estoque-delphi_udemy\ESTOQUE\Projeto\Unit1.pas</Transaction>
-    <Transaction>2021/03/02 16:57:19.521,M:\sistema-estoque-delphi_udemy\ESTOQUE\Forms\UfrmPadrao.pas=M:\sistema-estoque-delphi_udemy\ESTOQUE\Projeto\Unit1.pas</Transaction>
-    <Transaction>2021/03/02 16:57:19.521,M:\sistema-estoque-delphi_udemy\ESTOQUE\Forms\UfrmPadrao.dfm=M:\sistema-estoque-delphi_udemy\ESTOQUE\Projeto\Unit1.dfm</Transaction>
+    <Transaction>2021/02/28 18:15:24.000.496,M:\sistema-estoque-delphi_udemy\ESTOQUE\Forms\uDM.pas=M:\sistema-estoque-delphi_udemy\ESTOQUE\Projeto\Unit1.pas</Transaction>
+    <Transaction>2021/02/28 18:15:24.000.496,M:\sistema-estoque-delphi_udemy\ESTOQUE\Forms\uDM.dfm=M:\sistema-estoque-delphi_udemy\ESTOQUE\Projeto\Unit1.dfm</Transaction>
+    <Transaction>2021/03/02 16:56:44.000.215,=M:\sistema-estoque-delphi_udemy\ESTOQUE\Projeto\Unit1.pas</Transaction>
+    <Transaction>2021/03/02 16:57:19.000.521,M:\sistema-estoque-delphi_udemy\ESTOQUE\Projeto\Unit1.dfm=M:\sistema-estoque-delphi_udemy\ESTOQUE\Forms\UfrmPadrao.dfm</Transaction>
+    <Transaction>2021/03/02 16:57:19.000.521,M:\sistema-estoque-delphi_udemy\ESTOQUE\Projeto\Unit1.pas=M:\sistema-estoque-delphi_udemy\ESTOQUE\Forms\UfrmPadrao.pas</Transaction>
+    <Transaction>2021/03/03 15:47:14.795,=M:\sistema-estoque-delphi_udemy\ESTOQUE\Projeto\Unit1.pas</Transaction>
+    <Transaction>2021/03/03 15:48:26.398,M:\sistema-estoque-delphi_udemy\ESTOQUE\Forms\UfrmUsuario.dfm=M:\sistema-estoque-delphi_udemy\ESTOQUE\Projeto\Unit1.dfm</Transaction>
+    <Transaction>2021/03/03 15:48:26.398,M:\sistema-estoque-delphi_udemy\ESTOQUE\Forms\UfrmUsuario.pas=M:\sistema-estoque-delphi_udemy\ESTOQUE\Projeto\Unit1.pas</Transaction>
   </Transactions>
 </BorlandProject>

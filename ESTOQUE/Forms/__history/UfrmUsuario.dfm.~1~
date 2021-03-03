@@ -1,0 +1,10 @@
+inherited frmUsuario: TfrmUsuario
+  Caption = 'Cadastro de Usu'#225'rios'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited Panel2: TPanel
+    inherited DBNavigator1: TDBNavigator
+      Hints.Strings = ()
+    end
+  end
+end

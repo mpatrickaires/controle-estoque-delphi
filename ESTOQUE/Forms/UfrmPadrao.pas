@@ -24,6 +24,7 @@ type
     DBNavigator1: TDBNavigator;
     qryPadrao: TFDQuery;
     dsPadrao: TDataSource;
+    btnSair: TBitBtn;
     procedure trataBotoes();
     procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure btnNovoClick(Sender: TObject);
@@ -32,6 +33,7 @@ type
     procedure btnGravarClick(Sender: TObject);
     procedure btnCancelarClick(Sender: TObject);
     procedure btnAtualizarClick(Sender: TObject);
+    procedure btnSairClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -71,7 +73,7 @@ begin
   trataBotoes;
 
   if MessageBox(Handle, 'Deseja deletar esse registro?', 'Deletar Registro',
-  MB_ICONQUESTION + MB_YESNO) = mrNo then
+  MB_ICONQUESTION + MB_YESNO) = mrYes then
    begin
      qryPadrao.Delete;
      MessageBox(Handle, 'Registro deletado com sucesso!', 'Deletar Registro',
@@ -91,7 +93,7 @@ begin
   trataBotoes;
 
   if MessageBox(Handle, 'Deseja editar esse registro?', 'Editar Registro',
-  MB_ICONQUESTION + MB_YESNO) = mrNo then
+  MB_ICONQUESTION + MB_YESNO) = mrYes then
    begin
      qryPadrao.Edit;
    end
@@ -115,8 +117,14 @@ end;
 procedure TfrmPadrao.btnNovoClick(Sender: TObject);
 begin
   // Cria um novo registro
+  qryPadrao.Open;
   trataBotoes;
   qryPadrao.Append;
+end;
+
+procedure TfrmPadrao.btnSairClick(Sender: TObject);
+begin
+  Close;
 end;
 
 procedure TfrmPadrao.FormKeyPress(Sender: TObject; var Key: Char);

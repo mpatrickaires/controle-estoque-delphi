@@ -26,8 +26,7 @@ object frmPrincipal: TfrmPrincipal
     Color = 13298927
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 752
-    object SpeedButton1: TSpeedButton
+    object btnUsuario: TSpeedButton
       Left = 0
       Top = 0
       Width = 100
@@ -428,8 +427,9 @@ object frmPrincipal: TfrmPrincipal
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       Layout = blGlyphTop
       ParentFont = False
+      OnClick = btnUsuarioClick
     end
-    object SpeedButton2: TSpeedButton
+    object btnEmpresa: TSpeedButton
       Left = 106
       Top = 0
       Width = 100
@@ -960,7 +960,7 @@ object frmPrincipal: TfrmPrincipal
       Layout = blGlyphTop
       ParentFont = False
     end
-    object SpeedButton3: TSpeedButton
+    object btnClientes: TSpeedButton
       Left = 212
       Top = 0
       Width = 100
@@ -1362,7 +1362,7 @@ object frmPrincipal: TfrmPrincipal
       Layout = blGlyphTop
       ParentFont = False
     end
-    object SpeedButton4: TSpeedButton
+    object btnFornecedores: TSpeedButton
       Left = 318
       Top = 0
       Width = 100
@@ -1893,7 +1893,7 @@ object frmPrincipal: TfrmPrincipal
       Layout = blGlyphTop
       ParentFont = False
     end
-    object SpeedButton5: TSpeedButton
+    object btnProdutos: TSpeedButton
       Left = 424
       Top = 0
       Width = 100
@@ -2424,7 +2424,7 @@ object frmPrincipal: TfrmPrincipal
       Layout = blGlyphTop
       ParentFont = False
     end
-    object SpeedButton6: TSpeedButton
+    object btnFormaPgto: TSpeedButton
       Left = 530
       Top = 0
       Width = 100
@@ -2955,7 +2955,7 @@ object frmPrincipal: TfrmPrincipal
       Layout = blGlyphTop
       ParentFont = False
     end
-    object SpeedButton7: TSpeedButton
+    object btnCompras: TSpeedButton
       Left = 636
       Top = 0
       Width = 100
@@ -3486,7 +3486,7 @@ object frmPrincipal: TfrmPrincipal
       Layout = blGlyphTop
       ParentFont = False
     end
-    object SpeedButton8: TSpeedButton
+    object btnVendas: TSpeedButton
       Left = 742
       Top = 0
       Width = 100
@@ -4017,7 +4017,7 @@ object frmPrincipal: TfrmPrincipal
       Layout = blGlyphTop
       ParentFont = False
     end
-    object SpeedButton9: TSpeedButton
+    object btnTrocarUsuario: TSpeedButton
       Left = 848
       Top = 0
       Width = 100
@@ -4419,12 +4419,12 @@ object frmPrincipal: TfrmPrincipal
       Layout = blGlyphTop
       ParentFont = False
     end
-    object SpeedButton10: TSpeedButton
+    object btnSair: TSpeedButton
       Left = 954
       Top = 0
       Width = 100
       Height = 90
-      Caption = '&Fechar'
+      Caption = '&Sair'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -4820,7 +4820,7 @@ object frmPrincipal: TfrmPrincipal
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       Layout = blGlyphTop
       ParentFont = False
-      OnClick = SpeedButton10Click
+      OnClick = btnSairClick
     end
   end
   object StatusBar1: TStatusBar
@@ -4838,9 +4838,6 @@ object frmPrincipal: TfrmPrincipal
       item
         Width = 50
       end>
-    ExplicitLeft = 488
-    ExplicitTop = 344
-    ExplicitWidth = 0
   end
   object Timer1: TTimer
     OnTimer = Timer1Timer
