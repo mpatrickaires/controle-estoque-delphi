@@ -44,6 +44,7 @@ type
     procedure abreTelaUsuario;
     procedure abreTelaEmpresa;
     procedure abreTelaCliente;
+    procedure abreTelaFornecedor;
     procedure Timer1Timer(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure btnSairClick(Sender: TObject);
@@ -54,6 +55,8 @@ type
     procedure Empresa1Click(Sender: TObject);
     procedure btnClientesClick(Sender: TObject);
     procedure Cliente1Click(Sender: TObject);
+    procedure btnFornecedoresClick(Sender: TObject);
+    procedure Fornecedores1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -67,7 +70,7 @@ implementation
 
 {$R *.dfm}
 
-uses UfrmUsuario, UfrmEmpresa, UfrmCliente;
+uses UfrmUsuario, UfrmEmpresa, UfrmCliente, UfrmFornecedor;
 
 procedure TfrmPrincipal.Button1Click(Sender: TObject);
 begin
@@ -89,6 +92,11 @@ begin
   StatusBar1.Panels[0].Text := DateToStr(Now);
   StatusBar1.Panels[1].Text := TimeToStr(Now);
   StatusBar1.Panels[2].Text := 'Seja bem-vindo ao sistema!';
+end;
+
+procedure TfrmPrincipal.Fornecedores1Click(Sender: TObject);
+begin
+  abreTelaFornecedor;
 end;
 
 procedure TfrmPrincipal.abreTelaCliente;
@@ -115,6 +123,18 @@ begin
   end;
 end;
 
+procedure TfrmPrincipal.abreTelaFornecedor;
+begin
+  frmFornecedor := TfrmFornecedor.Create(Self);
+
+  try
+    frmFornecedor.ShowModal;
+  finally
+    frmFornecedor.Free;
+    frmFornecedor := nil;
+  end;
+end;
+
 procedure TfrmPrincipal.abreTelaUsuario;
 begin
   frmUsuario := TfrmUsuario.Create(Self);
@@ -135,6 +155,11 @@ end;
 procedure TfrmPrincipal.btnEmpresaClick(Sender: TObject);
 begin
   abreTelaEmpresa;
+end;
+
+procedure TfrmPrincipal.btnFornecedoresClick(Sender: TObject);
+begin
+  abreTelaFornecedor;
 end;
 
 procedure TfrmPrincipal.btnSairClick(Sender: TObject);

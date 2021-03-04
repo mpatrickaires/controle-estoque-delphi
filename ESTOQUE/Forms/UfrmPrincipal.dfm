@@ -1894,6 +1894,7 @@ object frmPrincipal: TfrmPrincipal
         FF00FFFFFF00}
       Layout = blGlyphTop
       ParentFont = False
+      OnClick = btnFornecedoresClick
     end
     object btnProdutos: TSpeedButton
       Left = 424
@@ -4869,6 +4870,7 @@ object frmPrincipal: TfrmPrincipal
       object Fornecedores1: TMenuItem
         Caption = '&Fornecedores'
         ShortCut = 16454
+        OnClick = Fornecedores1Click
       end
       object Produtos1: TMenuItem
         Caption = '&Produtos'

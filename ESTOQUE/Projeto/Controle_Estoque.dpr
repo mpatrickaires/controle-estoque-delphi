@@ -7,7 +7,8 @@ uses
   UfrmPadrao in '..\Forms\UfrmPadrao.pas' {frmPadrao},
   UfrmUsuario in '..\Forms\UfrmUsuario.pas' {frmUsuario},
   UfrmEmpresa in '..\Forms\UfrmEmpresa.pas' {frmEmpresa},
-  UfrmCliente in '..\Forms\UfrmCliente.pas' {frmCliente};
+  UfrmCliente in '..\Forms\UfrmCliente.pas' {frmCliente},
+  UfrmFornecedor in '..\Forms\UfrmFornecedor.pas' {frmFornecedor};
 
 {$R *.res}
 
