@@ -1362,6 +1362,7 @@ object frmPrincipal: TfrmPrincipal
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       Layout = blGlyphTop
       ParentFont = False
+      OnClick = btnClientesClick
     end
     object btnFornecedores: TSpeedButton
       Left = 318
@@ -4852,23 +4853,30 @@ object frmPrincipal: TfrmPrincipal
       Caption = 'Cadastro'
       object Usurio1: TMenuItem
         Caption = '&Usu'#225'rio'
+        ShortCut = 16469
         OnClick = Usurio1Click
       end
       object Empresa1: TMenuItem
         Caption = '&Empresa'
+        ShortCut = 16453
         OnClick = Empresa1Click
       end
       object Cliente1: TMenuItem
         Caption = '&Clientes'
+        ShortCut = 16451
+        OnClick = Cliente1Click
       end
       object Fornecedores1: TMenuItem
         Caption = '&Fornecedores'
+        ShortCut = 16454
       end
       object Produtos1: TMenuItem
         Caption = '&Produtos'
+        ShortCut = 16464
       end
       object FormadePgto1: TMenuItem
         Caption = '&Forma de Pgto'
+        ShortCut = 16454
       end
     end
     object Movimentos1: TMenuItem

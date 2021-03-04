@@ -1,6 +1,7 @@
 object frmPadrao: TfrmPadrao
   Left = 0
   Top = 0
+  ActiveControl = btnNovo
   BorderStyle = bsDialog
   Caption = 'Formul'#225'rio Padr'#227'o'
   ClientHeight = 445
