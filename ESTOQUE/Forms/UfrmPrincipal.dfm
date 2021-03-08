@@ -2426,13 +2426,14 @@ object frmPrincipal: TfrmPrincipal
         000000000000}
       Layout = blGlyphTop
       ParentFont = False
+      OnClick = btnProdutosClick
     end
     object btnFormaPgto: TSpeedButton
       Left = 530
       Top = 0
       Width = 100
       Height = 90
-      Caption = '&Forma Pgto'
+      Caption = 'Forma &Pgto'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -4875,6 +4876,7 @@ object frmPrincipal: TfrmPrincipal
       object Produtos1: TMenuItem
         Caption = '&Produtos'
         ShortCut = 16464
+        OnClick = Produtos1Click
       end
       object FormadePgto1: TMenuItem
         Caption = '&Forma de Pgto'

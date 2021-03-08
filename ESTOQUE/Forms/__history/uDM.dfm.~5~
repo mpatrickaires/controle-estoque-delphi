@@ -5,8 +5,8 @@ object DM: TDM
   object Conexao: TFDConnection
     Params.Strings = (
       
-        'Database=M:\aprendizado-delphi\sistema-estoque-delphi_udemy\ESTO' +
-        'QUE\EXE\BANCO\ESTOQUE.FDB'
+        'Database=M:\sistema-estoque-delphi_udemy\ESTOQUE\EXE\BANCO\ESTOQ' +
+        'UE.FDB'
       'User_Name=SYSDBA'
       'Password=masterkey'
       'Server=localhost'
