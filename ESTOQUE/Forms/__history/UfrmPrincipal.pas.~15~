@@ -59,7 +59,6 @@ type
     procedure btnFornecedoresClick(Sender: TObject);
     procedure Fornecedores1Click(Sender: TObject);
     procedure btnProdutosClick(Sender: TObject);
-    procedure Produtos1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -100,11 +99,6 @@ end;
 procedure TfrmPrincipal.Fornecedores1Click(Sender: TObject);
 begin
   abreTelaFornecedor;
-end;
-
-procedure TfrmPrincipal.Produtos1Click(Sender: TObject);
-begin
-  abreTelaProduto;
 end;
 
 procedure TfrmPrincipal.abreTelaCliente;

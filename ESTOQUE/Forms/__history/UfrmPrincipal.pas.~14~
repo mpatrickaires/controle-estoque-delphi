@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Buttons, Vcl.ExtCtrls, Vcl.ComCtrls,
-  Vcl.Menus, Vcl.StdCtrls, UfrmProduto;
+  Vcl.Menus, Vcl.StdCtrls;
 
 type
   TfrmPrincipal = class(TForm)
@@ -45,7 +45,6 @@ type
     procedure abreTelaEmpresa;
     procedure abreTelaCliente;
     procedure abreTelaFornecedor;
-    procedure abreTelaProduto;
     procedure Timer1Timer(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure btnSairClick(Sender: TObject);
@@ -58,8 +57,6 @@ type
     procedure Cliente1Click(Sender: TObject);
     procedure btnFornecedoresClick(Sender: TObject);
     procedure Fornecedores1Click(Sender: TObject);
-    procedure btnProdutosClick(Sender: TObject);
-    procedure Produtos1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -102,11 +99,6 @@ begin
   abreTelaFornecedor;
 end;
 
-procedure TfrmPrincipal.Produtos1Click(Sender: TObject);
-begin
-  abreTelaProduto;
-end;
-
 procedure TfrmPrincipal.abreTelaCliente;
 begin
   frmCliente := TfrmCliente.Create(Self);
@@ -143,18 +135,6 @@ begin
   end;
 end;
 
-procedure TfrmPrincipal.abreTelaProduto;
-begin
-  frmProduto := TfrmProduto.Create(Self);
-
-  try
-    frmProduto.ShowModal;
-  finally
-    frmProduto.Free;
-    frmProduto := nil;
-  end;
-end;
-
 procedure TfrmPrincipal.abreTelaUsuario;
 begin
   frmUsuario := TfrmUsuario.Create(Self);
@@ -180,11 +160,6 @@ end;
 procedure TfrmPrincipal.btnFornecedoresClick(Sender: TObject);
 begin
   abreTelaFornecedor;
-end;
-
-procedure TfrmPrincipal.btnProdutosClick(Sender: TObject);
-begin
-  abreTelaProduto;
 end;
 
 procedure TfrmPrincipal.btnSairClick(Sender: TObject);

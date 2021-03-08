@@ -8,7 +8,8 @@ uses
   UfrmUsuario in '..\Forms\UfrmUsuario.pas' {frmUsuario},
   UfrmEmpresa in '..\Forms\UfrmEmpresa.pas' {frmEmpresa},
   UfrmCliente in '..\Forms\UfrmCliente.pas' {frmCliente},
-  UfrmFornecedor in '..\Forms\UfrmFornecedor.pas' {frmFornecedor};
+  UfrmFornecedor in '..\Forms\UfrmFornecedor.pas' {frmFornecedor},
+  UfrmProduto in '..\Forms\UfrmProduto.pas' {frmProduto};
 
 {$R *.res}
 
@@ -17,5 +18,6 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
   Application.CreateForm(TDM, DM);
+  Application.CreateForm(TfrmProduto, frmProduto);
   Application.Run;
 end.
