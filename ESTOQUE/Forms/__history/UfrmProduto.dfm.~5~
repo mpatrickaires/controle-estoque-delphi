@@ -85,7 +85,6 @@ inherited frmProduto: TfrmProduto
   end
   inherited Panel2: TPanel
     Top = 256
-    ExplicitTop = 256
     inherited DBNavigator1: TDBNavigator
       Hints.Strings = ()
     end

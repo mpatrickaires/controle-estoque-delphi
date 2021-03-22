@@ -1,0 +1,10 @@
+inherited frmFormaPgto: TfrmFormaPgto
+  Caption = 'Cadastro de Formas de Pagamento'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited Panel2: TPanel
+    inherited DBNavigator1: TDBNavigator
+      Hints.Strings = ()
+    end
+  end
+end

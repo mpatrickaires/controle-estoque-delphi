@@ -2433,7 +2433,7 @@ object frmPrincipal: TfrmPrincipal
       Top = 0
       Width = 100
       Height = 90
-      Caption = 'Forma &Pgto'
+      Caption = 'Fo&rma Pgto'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -2958,6 +2958,7 @@ object frmPrincipal: TfrmPrincipal
         FF00FFFFFF00}
       Layout = blGlyphTop
       ParentFont = False
+      OnClick = btnFormaPgtoClick
     end
     object btnCompras: TSpeedButton
       Left = 636
@@ -4881,6 +4882,7 @@ object frmPrincipal: TfrmPrincipal
       object FormadePgto1: TMenuItem
         Caption = '&Forma de Pgto'
         ShortCut = 16454
+        OnClick = FormadePgto1Click
       end
     end
     object Movimentos1: TMenuItem

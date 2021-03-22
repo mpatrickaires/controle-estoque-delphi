@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Buttons, Vcl.ExtCtrls, Vcl.ComCtrls,
-  Vcl.Menus, Vcl.StdCtrls, UfrmProduto, UfrmFormaPgto;
+  Vcl.Menus, Vcl.StdCtrls, UfrmProduto;
 
 type
   TfrmPrincipal = class(TForm)
@@ -46,7 +46,6 @@ type
     procedure abreTelaCliente;
     procedure abreTelaFornecedor;
     procedure abreTelaProduto;
-    procedure abreTelaFormaPgto;
     procedure Timer1Timer(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure btnSairClick(Sender: TObject);
@@ -61,8 +60,6 @@ type
     procedure Fornecedores1Click(Sender: TObject);
     procedure btnProdutosClick(Sender: TObject);
     procedure Produtos1Click(Sender: TObject);
-    procedure btnFormaPgtoClick(Sender: TObject);
-    procedure FormadePgto1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -93,11 +90,6 @@ begin
   abreTelaEmpresa;
 end;
 
-procedure TfrmPrincipal.FormadePgto1Click(Sender: TObject);
-begin
-  abreTelaFormaPgto;
-end;
-
 procedure TfrmPrincipal.FormCreate(Sender: TObject);
 begin
   StatusBar1.Panels[0].Text := DateToStr(Now);
@@ -113,18 +105,6 @@ end;
 procedure TfrmPrincipal.Produtos1Click(Sender: TObject);
 begin
   abreTelaProduto;
-end;
-
-procedure TfrmPrincipal.abreTelaFormaPgto;
-begin
-  frmFormaPgto := TfrmFormaPgto.Create(Self);
-
-  try
-    frmFormaPgto.ShowModal;
-  finally
-    frmFormaPgto.Free;
-    frmFormaPgto := nil;
-  end;
 end;
 
 procedure TfrmPrincipal.abreTelaCliente;
@@ -195,11 +175,6 @@ end;
 procedure TfrmPrincipal.btnEmpresaClick(Sender: TObject);
 begin
   abreTelaEmpresa;
-end;
-
-procedure TfrmPrincipal.btnFormaPgtoClick(Sender: TObject);
-begin
-  abreTelaFormaPgto;
 end;
 
 procedure TfrmPrincipal.btnFornecedoresClick(Sender: TObject);
