@@ -6,15 +6,18 @@ uses
   uDM in '..\Forms\uDM.pas' {DM: TDataModule},
   UfrmPadrao in '..\Forms\UfrmPadrao.pas' {frmPadrao},
   UfrmUsuario in '..\Forms\UfrmUsuario.pas' {frmUsuario},
-  UfrmEmpresa in '..\Forms\UfrmEmpresa.pas' {frmEmpresa};
+  UfrmEmpresa in '..\Forms\UfrmEmpresa.pas' {frmEmpresa},
+  UfrmCliente in '..\Forms\UfrmCliente.pas' {frmCliente},
+  UfrmFornecedor in '..\Forms\UfrmFornecedor.pas' {frmFornecedor},
+  UfrmProduto in '..\Forms\UfrmProduto.pas' {frmProduto},
+  UfrmFormaPgto in '..\Forms\UfrmFormaPgto.pas' {frmFormaPgto};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TfrmPrincipal, frmPrincipal);
   Application.CreateForm(TDM, DM);
-  Application.CreateForm(TfrmEmpresa, frmEmpresa);
+  Application.CreateForm(TfrmPrincipal, frmPrincipal);
   Application.Run;
 end.

@@ -139,6 +139,10 @@
             <Form>frmFormaPgto</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="..\Forms\UfrmPesquisaPadrao.pas">
+            <Form>frmPesquisaPadrao</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
