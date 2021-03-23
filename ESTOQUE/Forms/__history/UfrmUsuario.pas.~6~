@@ -50,17 +50,9 @@ begin
 end;
 
 procedure TfrmUsuario.btnPesquisarClick(Sender: TObject);
-var
-  ObjFrmPesquisaUsuario : TfrmPesquisaUsuario;
 begin
   inherited;
-  ObjFrmPesquisaUsuario := TfrmPesquisaUsuario.Create(nil);
-
-  try
-   ObjFrmPesquisaUsuario.ShowModal;
-  finally
-   ObjFrmPesquisaUsuario.Free;
-  end;
+  frmPesquisaUsuario := TfrmPesquisaUsuario.Create(nil);
 end;
 
 end.

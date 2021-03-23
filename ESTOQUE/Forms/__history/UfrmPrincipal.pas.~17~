@@ -116,80 +116,74 @@ begin
 end;
 
 procedure TfrmPrincipal.abreTelaFormaPgto;
-var
-  ObjFrmFormaPgto : TfrmFormaPgto;
 begin
-  ObjFrmFormaPgto := TfrmFormaPgto.Create(nil);
+  frmFormaPgto := TfrmFormaPgto.Create(Self);
 
   try
-    ObjFrmFormaPgto.ShowModal;
+    frmFormaPgto.ShowModal;
   finally
-    ObjFrmFormaPgto.Free;
+    frmFormaPgto.Free;
+    frmFormaPgto := nil;
   end;
 end;
 
 procedure TfrmPrincipal.abreTelaCliente;
-var
-  ObjFrmCliente : TfrmCliente;
 begin
-  ObjFrmCliente := TfrmCliente.Create(nil);
+  frmCliente := TfrmCliente.Create(Self);
 
   try
-    ObjFrmCliente.ShowModal;
+    frmCliente.ShowModal;
   finally
-    ObjFrmCliente.Free;
+    frmCliente.Free;
+    frmCliente := nil;
   end;
 end;
 
 procedure TfrmPrincipal.abreTelaEmpresa;
-var
-  ObjFrmEmpresa : TfrmEmpresa;
 begin
-  ObjFrmEmpresa := TfrmEmpresa.Create(nil);
+  frmEmpresa := TfrmEmpresa.Create(Self);
 
   try
-    ObjFrmEmpresa.ShowModal;
+    frmEmpresa.ShowModal;
   finally
-    ObjFrmEmpresa.Free;
+    frmEmpresa.Free;
+    frmEmpresa := nil;
   end;
 end;
 
 procedure TfrmPrincipal.abreTelaFornecedor;
-var
-  ObjFrmFornecedor : TfrmFornecedor;
 begin
-  ObjFrmFornecedor := TfrmFornecedor.Create(nil);
+  frmFornecedor := TfrmFornecedor.Create(Self);
 
   try
-    ObjFrmFornecedor.ShowModal;
+    frmFornecedor.ShowModal;
   finally
-    ObjFrmFornecedor.Free;
+    frmFornecedor.Free;
+    frmFornecedor := nil;
   end;
 end;
 
 procedure TfrmPrincipal.abreTelaProduto;
-var
-  ObjFrmFormaPgto : TfrmFormaPgto;
 begin
-  ObjFrmFormaPgto := TfrmFormaPgto.Create(nil);
+  frmProduto := TfrmProduto.Create(Self);
 
   try
-    ObjFrmFormaPgto.ShowModal;
+    frmProduto.ShowModal;
   finally
-    ObjFrmFormaPgto.Free;
+    frmProduto.Free;
+    frmProduto := nil;
   end;
 end;
 
 procedure TfrmPrincipal.abreTelaUsuario;
-var
-  ObjFrmUsuario : TfrmUsuario;
 begin
-  ObjFrmUsuario := TfrmUsuario.Create(nil);
+  frmUsuario := TfrmUsuario.Create(Self);
 
   try
-    ObjFrmUsuario.ShowModal;
+    frmUsuario.ShowModal;
   finally
-    ObjFrmUsuario.Free;
+    frmUsuario.Free;
+    frmUsuario := nil;
   end;
 end;
 

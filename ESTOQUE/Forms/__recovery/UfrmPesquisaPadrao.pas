@@ -18,9 +18,9 @@ type
     edtNome: TEdit;
     edtInicio: TMaskEdit;
     edtFim: TMaskEdit;
-    Label2: TLabel;
-    Label3: TLabel;
-    Label4: TLabel;
+    lblNome: TLabel;
+    lblInicio: TLabel;
+    lblFim: TLabel;
     DBGrid1: TDBGrid;
     Panel2: TPanel;
     btnPesquisar: TBitBtn;
@@ -60,6 +60,8 @@ begin
      edtNome.Visible := True;
      edtInicio.Visible := False;
      edtFim.Visible := False;
+
+     lblNome.Caption := 'Código';
     end;
 
    1 :
@@ -67,6 +69,7 @@ begin
      edtNome.Visible := True;
      edtInicio.Visible := False;
      edtFim.Visible := False;
+     lblNome.Caption := 'Nome';
     end;
 
    2 :
@@ -74,6 +77,8 @@ begin
      edtNome.Visible := False;
      edtInicio.Visible := True;
      edtFim.Visible := False;
+
+     lblInicio.Ini
     end;
 
    3 :
@@ -83,6 +88,10 @@ begin
      edtFim.Visible := True;
     end;
   end;
+
+  lblNome.Visible := edtNome.Visible;
+  lblInicio.Visible := edtInicio.Visible;
+  lblFim.Visible := edtFim.Visible;
 end;
 
 procedure TfrmPesquisaPadrao.FormCreate(Sender: TObject);

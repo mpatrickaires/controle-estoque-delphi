@@ -38,7 +38,7 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
       Font.Style = []
       ParentFont = False
     end
-    object Label2: TLabel
+    object lblNome: TLabel
       Left = 184
       Top = 10
       Width = 42
@@ -51,7 +51,7 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
       Font.Style = []
       ParentFont = False
     end
-    object Label3: TLabel
+    object lblInicio: TLabel
       Left = 416
       Top = 10
       Width = 76
@@ -64,7 +64,7 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
       Font.Style = []
       ParentFont = False
     end
-    object Label4: TLabel
+    object lblFim: TLabel
       Left = 520
       Top = 10
       Width = 63

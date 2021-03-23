@@ -43,14 +43,8 @@ inherited frmUsuario: TfrmUsuario
     Caption = 'CADASTRO'
     FocusControl = edtCadastro
   end
-  inherited Panel1: TPanel
-    inherited btnPesquisar: TBitBtn
-      OnClick = btnPesquisarClick
-    end
-  end
   inherited Panel2: TPanel
     Top = 285
-    ExplicitTop = 285
     inherited DBNavigator1: TDBNavigator
       Hints.Strings = ()
     end

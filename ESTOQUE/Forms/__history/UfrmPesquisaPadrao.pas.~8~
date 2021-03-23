@@ -29,9 +29,7 @@ type
     qryPesquisaPadrao: TFDQuery;
     dsPesquisaPadrao: TDataSource;
     procedure btnPesquisarClick(Sender: TObject);
-    procedure cbChavePesquisaChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
     { Private declarations }
   public
@@ -52,51 +50,9 @@ begin
   qryPesquisaPadrao.Params.Clear;
 end;
 
-procedure TfrmPesquisaPadrao.cbChavePesquisaChange(Sender: TObject);
-begin
-  case cbChavePesquisa.ItemIndex of
-   0 :
-    begin
-     edtNome.Visible := True;
-     edtInicio.Visible := False;
-     edtFim.Visible := False;
-    end;
-
-   1 :
-    begin
-     edtNome.Visible := True;
-     edtInicio.Visible := False;
-     edtFim.Visible := False;
-    end;
-
-   2 :
-    begin
-     edtNome.Visible := False;
-     edtInicio.Visible := True;
-     edtFim.Visible := False;
-    end;
-
-   3 :
-    begin
-     edtNome.Visible := False;
-     edtInicio.Visible := True;
-     edtFim.Visible := True;
-    end;
-  end;
-end;
-
 procedure TfrmPesquisaPadrao.FormCreate(Sender: TObject);
 begin
   cbChavePesquisa.ItemIndex := 0;
-  cbChavePesquisaChange(nil);
-end;
-
-procedure TfrmPesquisaPadrao.FormKeyDown(Sender: TObject; var Key: Word;
-  Shift: TShiftState);
-begin
-  if Key = VK_RETURN then btnPesquisarClick(nil)
-
-  else if Key = VK_ESCAPE then Close;
 end;
 
 end.
