@@ -46,7 +46,6 @@ type
     Label12: TLabel;
     edtCadastro: TDBEdit;
     procedure btnNovoClick(Sender: TObject);
-    procedure btnPesquisarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -58,9 +57,6 @@ var
 
 implementation
 
-uses
-  UfrmPesquisaCliente;
-
 {$R *.dfm}
 
 procedure TfrmCliente.btnNovoClick(Sender: TObject);
@@ -68,19 +64,6 @@ begin
   inherited;
   edtCadastro.Text := DateToStr(Now);
   edtNome.SetFocus;
-end;
-
-procedure TfrmCliente.btnPesquisarClick(Sender: TObject);
-var
-  objFrmPesquisaCliente : TfrmPesquisaCliente;
-begin
-  inherited;
-  objFrmPesquisaCliente := TfrmPesquisaCliente.Create(nil);
-  try
-   objFrmPesquisaCliente.ShowModal;
-  finally
-   objFrmPesquisaCliente.Free;
-  end;
 end;
 
 end.

@@ -61,11 +61,6 @@ begin
      qryPesquisaPadrao.ParamByName('pInicio').AsDate := StrToDate(edtInicio.Text);
      qryPesquisaPadrao.ParamByName('pFim').AsDate := StrToDate(edtFim.Text);
     end;
-
-   4 : // Pesquisa por Data de Cadastro
-    begin
-     qryPesquisaPadrao.SQL.Add('ORDER BY ID_USUARIO');
-    end;
   end;
 
   qryPesquisaPadrao.Open;

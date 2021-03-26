@@ -61,7 +61,7 @@ begin
      edtInicio.Visible := False;
      edtFim.Visible := False;
 
-     lblNome.Caption := 'CÃ³digo';
+     lblNome.Caption := 'Código';
     end;
 
    1 :
@@ -108,6 +108,8 @@ procedure TfrmPesquisaPadrao.FormCreate(Sender: TObject);
 begin
   cbChavePesquisa.ItemIndex := 0;
   cbChavePesquisaChange(nil);
+
+  qryPesquisaPadrao.Open;
 end;
 
 procedure TfrmPesquisaPadrao.FormKeyDown(Sender: TObject; var Key: Word;

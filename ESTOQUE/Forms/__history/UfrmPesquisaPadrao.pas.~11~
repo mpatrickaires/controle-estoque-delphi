@@ -54,10 +54,6 @@ end;
 
 procedure TfrmPesquisaPadrao.cbChavePesquisaChange(Sender: TObject);
 begin
-  edtNome.Text := '';
-  edtInicio.Text := '';
-  edtFim.Text := '';
-
   case cbChavePesquisa.ItemIndex of
    0 :
     begin
@@ -112,8 +108,6 @@ procedure TfrmPesquisaPadrao.FormCreate(Sender: TObject);
 begin
   cbChavePesquisa.ItemIndex := 0;
   cbChavePesquisaChange(nil);
-
-  qryPesquisaPadrao.Open;
 end;
 
 procedure TfrmPesquisaPadrao.FormKeyDown(Sender: TObject; var Key: Word;

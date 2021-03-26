@@ -1,4 +1,4 @@
-unit UfrmCliente;
+unit UfrmFornecedor;
 
 interface
 
@@ -11,8 +11,8 @@ uses
   Vcl.Buttons, Vcl.ExtCtrls, Vcl.Mask;
 
 type
-  TfrmCliente = class(TfrmPadrao)
-    qryPadraoID_CLIENTE: TFDAutoIncField;
+  TfrmFornecedor = class(TfrmPadrao)
+    qryPadraoID_FORNECEDOR: TFDAutoIncField;
     qryPadraoNOME: TStringField;
     qryPadraoENDERECO: TStringField;
     qryPadraoNUMERO: TIntegerField;
@@ -21,10 +21,11 @@ type
     qryPadraoUF: TStringField;
     qryPadraoCEP: TStringField;
     qryPadraoTELEFONE: TStringField;
-    qryPadraoCPF: TStringField;
+    qryPadraoCNPJ: TStringField;
+    qryPadraoEMAIL: TStringField;
     qryPadraoCADASTRO: TDateField;
     Label1: TLabel;
-    edtIDCliente: TDBEdit;
+    edtIDFornecedor: TDBEdit;
     Label2: TLabel;
     edtNome: TDBEdit;
     Label3: TLabel;
@@ -42,11 +43,12 @@ type
     Label9: TLabel;
     edtTelefone: TDBEdit;
     Label10: TLabel;
-    edtCpf: TDBEdit;
+    edtCNPJ: TDBEdit;
+    Label11: TLabel;
+    edtEmail: TDBEdit;
     Label12: TLabel;
     edtCadastro: TDBEdit;
     procedure btnNovoClick(Sender: TObject);
-    procedure btnPesquisarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -54,33 +56,19 @@ type
   end;
 
 var
-  frmCliente: TfrmCliente;
+  frmFornecedor: TfrmFornecedor;
 
 implementation
 
-uses
-  UfrmPesquisaCliente;
-
 {$R *.dfm}
 
-procedure TfrmCliente.btnNovoClick(Sender: TObject);
+uses uDM;
+
+procedure TfrmFornecedor.btnNovoClick(Sender: TObject);
 begin
   inherited;
   edtCadastro.Text := DateToStr(Now);
   edtNome.SetFocus;
-end;
-
-procedure TfrmCliente.btnPesquisarClick(Sender: TObject);
-var
-  objFrmPesquisaCliente : TfrmPesquisaCliente;
-begin
-  inherited;
-  objFrmPesquisaCliente := TfrmPesquisaCliente.Create(nil);
-  try
-   objFrmPesquisaCliente.ShowModal;
-  finally
-   objFrmPesquisaCliente.Free;
-  end;
 end;
 
 end.

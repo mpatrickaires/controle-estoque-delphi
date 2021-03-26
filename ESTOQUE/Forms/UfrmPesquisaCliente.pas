@@ -1,4 +1,4 @@
-unit UfrmPesquisaUsuario;
+unit UfrmPesquisaCliente;
 
 interface
 
@@ -11,10 +11,17 @@ uses
   Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons, Vcl.Mask, Vcl.ExtCtrls;
 
 type
-  TfrmPesquisaUsuario = class(TfrmPesquisaPadrao)
-    qryPesquisaPadraoID_USUARIO: TIntegerField;
+  TfrmPesquisaCliente = class(TfrmPesquisaPadrao)
+    qryPesquisaPadraoID_CLIENTE: TIntegerField;
     qryPesquisaPadraoNOME: TStringField;
-    qryPesquisaPadraoTIPO: TStringField;
+    qryPesquisaPadraoENDERECO: TStringField;
+    qryPesquisaPadraoNUMERO: TIntegerField;
+    qryPesquisaPadraoBAIRRO: TStringField;
+    qryPesquisaPadraoCIDADE: TStringField;
+    qryPesquisaPadraoUF: TStringField;
+    qryPesquisaPadraoCEP: TStringField;
+    qryPesquisaPadraoTELEFONE: TStringField;
+    qryPesquisaPadraoCPF: TStringField;
     qryPesquisaPadraoCADASTRO: TDateField;
     procedure btnPesquisarClick(Sender: TObject);
   private
@@ -24,23 +31,24 @@ type
   end;
 
 var
-  frmPesquisaUsuario: TfrmPesquisaUsuario;
+  frmPesquisaCliente: TfrmPesquisaCliente;
 
 implementation
 
 {$R *.dfm}
 
-procedure TfrmPesquisaUsuario.btnPesquisarClick(Sender: TObject);
+procedure TfrmPesquisaCliente.btnPesquisarClick(Sender: TObject);
 begin
   inherited;
 
-  qryPesquisaPadrao.SQL.Add('SELECT ID_USUARIO, NOME, TIPO, CADASTRO FROM TBLUSUARIO');
+  qryPesquisaPadrao.SQL.Add('SELECT ID_CLIENTE, NOME, ENDERECO, NUMERO, BAIRRO, CIDADE, '
+  + 'UF, CEP, TELEFONE, CPF, CADASTRO FROM TBLCLIENTE');
 
   case cbChavePesquisa.ItemIndex of
    0 : // Pesquisa por Código
     begin
-     qryPesquisaPadrao.SQL.Add('WHERE ID_USUARIO = :pId_Usuario');
-     qryPesquisaPadrao.ParamByName('pId_Usuario').AsString := edtNome.Text;
+     qryPesquisaPadrao.SQL.Add('WHERE ID_CLIENTE = :pId_Cliente');
+     qryPesquisaPadrao.ParamByName('pId_Cliente').AsString := edtNome.Text;
     end;
 
    1 : // Pesquisa por Nome
@@ -64,7 +72,7 @@ begin
 
    4 : // Pesquisa por Data de Cadastro
     begin
-     qryPesquisaPadrao.SQL.Add('ORDER BY ID_USUARIO');
+     qryPesquisaPadrao.SQL.Add('ORDER BY ID_CLIENTE');
     end;
   end;
 

@@ -1,0 +1,5 @@
+inherited frmPesquisaFornecedor: TfrmPesquisaFornecedor
+  Caption = 'Pesquisa de Fornecedores'
+  PixelsPerInch = 96
+  TextHeight = 13
+end

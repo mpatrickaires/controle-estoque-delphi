@@ -1,252 +1,239 @@
-inherited frmFornecedor: TfrmFornecedor
-  Caption = 'Cadastro de Fornecedor'
-  ClientHeight = 446
-  ExplicitHeight = 475
+inherited frmCliente: TfrmCliente
+  Caption = 'Cadastro de Cliente'
+  ClientHeight = 381
+  ExplicitHeight = 410
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel [0]
-    Left = 112
-    Top = 88
-    Width = 86
+    Left = 171
+    Top = 80
+    Width = 58
     Height = 13
-    Caption = 'ID_FORNECEDOR'
-    FocusControl = edtIDFornecedor
+    Caption = 'ID_CLIENTE'
+    FocusControl = edtIDCliente
   end
   object Label2: TLabel [1]
-    Left = 112
-    Top = 136
+    Left = 171
+    Top = 128
     Width = 29
     Height = 13
     Caption = 'NOME'
     FocusControl = edtNome
   end
   object Label3: TLabel [2]
-    Left = 112
-    Top = 229
+    Left = 171
+    Top = 176
     Width = 54
     Height = 13
     Caption = 'ENDERECO'
     FocusControl = edtEndereco
   end
   object Label4: TLabel [3]
-    Left = 547
-    Top = 229
+    Left = 528
+    Top = 173
     Width = 43
     Height = 13
     Caption = 'NUMERO'
     FocusControl = edtNumero
   end
   object Label5: TLabel [4]
-    Left = 112
-    Top = 280
+    Left = 171
+    Top = 272
     Width = 39
     Height = 13
     Caption = 'BAIRRO'
     FocusControl = edtBairro
   end
   object Label6: TLabel [5]
-    Left = 112
-    Top = 325
+    Left = 171
+    Top = 224
     Width = 38
     Height = 13
     Caption = 'CIDADE'
     FocusControl = edtCidade
   end
   object Label7: TLabel [6]
-    Left = 347
-    Top = 328
+    Left = 643
+    Top = 176
     Width = 13
     Height = 13
     Caption = 'UF'
     FocusControl = edtUF
   end
   object Label8: TLabel [7]
-    Left = 458
-    Top = 280
+    Left = 528
+    Top = 224
     Width = 19
     Height = 13
     Caption = 'CEP'
     FocusControl = edtCEP
   end
   object Label9: TLabel [8]
-    Left = 400
-    Top = 328
+    Left = 528
+    Top = 272
     Width = 50
     Height = 13
     Caption = 'TELEFONE'
     FocusControl = edtTelefone
   end
   object Label10: TLabel [9]
-    Left = 112
-    Top = 182
-    Width = 25
+    Left = 528
+    Top = 125
+    Width = 19
     Height = 13
-    Caption = 'CNPJ'
-    FocusControl = edtCNPJ
+    Caption = 'CPF'
+    FocusControl = edtCpf
   end
-  object Label11: TLabel [10]
-    Left = 282
-    Top = 182
-    Width = 30
-    Height = 13
-    Caption = 'EMAIL'
-    FocusControl = edtEmail
-  end
-  object Label12: TLabel [11]
-    Left = 264
-    Top = 88
+  object Label12: TLabel [10]
+    Left = 323
+    Top = 80
     Width = 55
     Height = 13
     Caption = 'CADASTRO'
     FocusControl = edtCadastro
   end
   inherited Panel1: TPanel
-    inherited btnPesquisar: TBitBtn
-      OnClick = btnPesquisarClick
-    end
+    TabOrder = 9
   end
   inherited Panel2: TPanel
-    Top = 389
-    ExplicitTop = 389
+    Top = 324
+    TabOrder = 10
     inherited DBNavigator1: TDBNavigator
       Hints.Strings = ()
     end
   end
-  object edtIDFornecedor: TDBEdit [14]
-    Left = 112
-    Top = 104
+  object edtIDCliente: TDBEdit [13]
+    Left = 171
+    Top = 96
     Width = 134
     Height = 21
-    CharCase = ecUpperCase
-    DataField = 'ID_FORNECEDOR'
+    DataField = 'ID_CLIENTE'
     DataSource = dsPadrao
     Enabled = False
-    TabOrder = 2
+    TabOrder = 11
   end
-  object edtNome: TDBEdit [15]
-    Left = 112
-    Top = 152
-    Width = 500
+  object edtNome: TDBEdit [14]
+    Left = 171
+    Top = 144
+    Width = 337
     Height = 21
     CharCase = ecUpperCase
     DataField = 'NOME'
     DataSource = dsPadrao
-    TabOrder = 4
+    TabOrder = 0
   end
-  object edtEndereco: TDBEdit [16]
-    Left = 112
-    Top = 245
-    Width = 417
+  object edtEndereco: TDBEdit [15]
+    Left = 171
+    Top = 192
+    Width = 337
     Height = 21
     CharCase = ecUpperCase
     DataField = 'ENDERECO'
     DataSource = dsPadrao
-    TabOrder = 7
+    TabOrder = 2
   end
-  object edtNumero: TDBEdit [17]
-    Left = 547
-    Top = 245
-    Width = 65
+  object edtNumero: TDBEdit [16]
+    Left = 528
+    Top = 192
+    Width = 92
     Height = 21
-    CharCase = ecUpperCase
     DataField = 'NUMERO'
     DataSource = dsPadrao
-    TabOrder = 8
+    TabOrder = 3
   end
-  object edtBairro: TDBEdit [18]
-    Left = 112
-    Top = 296
-    Width = 329
+  object edtBairro: TDBEdit [17]
+    Left = 171
+    Top = 288
+    Width = 337
     Height = 21
     CharCase = ecUpperCase
     DataField = 'BAIRRO'
     DataSource = dsPadrao
-    TabOrder = 9
+    TabOrder = 7
   end
-  object edtCidade: TDBEdit [19]
-    Left = 112
-    Top = 344
-    Width = 220
+  object edtCidade: TDBEdit [18]
+    Left = 171
+    Top = 240
+    Width = 337
     Height = 21
     CharCase = ecUpperCase
     DataField = 'CIDADE'
     DataSource = dsPadrao
-    TabOrder = 11
+    TabOrder = 5
   end
-  object edtUF: TDBEdit [20]
-    Left = 347
-    Top = 344
+  object edtUF: TDBEdit [19]
+    Left = 643
+    Top = 192
     Width = 30
     Height = 21
     CharCase = ecUpperCase
     DataField = 'UF'
     DataSource = dsPadrao
-    TabOrder = 12
+    TabOrder = 4
   end
-  object edtCEP: TDBEdit [21]
-    Left = 458
-    Top = 296
-    Width = 154
+  object edtCEP: TDBEdit [20]
+    Left = 528
+    Top = 240
+    Width = 145
     Height = 21
-    CharCase = ecUpperCase
     DataField = 'CEP'
-    DataSource = dsPadrao
-    TabOrder = 10
-  end
-  object edtTelefone: TDBEdit [22]
-    Left = 400
-    Top = 344
-    Width = 212
-    Height = 21
-    CharCase = ecUpperCase
-    DataField = 'TELEFONE'
-    DataSource = dsPadrao
-    TabOrder = 13
-  end
-  object edtCNPJ: TDBEdit [23]
-    Left = 112
-    Top = 198
-    Width = 154
-    Height = 21
-    CharCase = ecUpperCase
-    DataField = 'CNPJ'
-    DataSource = dsPadrao
-    TabOrder = 5
-  end
-  object edtEmail: TDBEdit [24]
-    Left = 282
-    Top = 198
-    Width = 330
-    Height = 21
-    CharCase = ecLowerCase
-    DataField = 'EMAIL'
     DataSource = dsPadrao
     TabOrder = 6
   end
-  object edtCadastro: TDBEdit [25]
-    Left = 264
-    Top = 104
+  object edtTelefone: TDBEdit [21]
+    Left = 528
+    Top = 288
+    Width = 145
+    Height = 21
+    DataField = 'TELEFONE'
+    DataSource = dsPadrao
+    TabOrder = 8
+  end
+  object edtCpf: TDBEdit [22]
+    Left = 528
+    Top = 144
+    Width = 145
+    Height = 21
+    DataField = 'CPF'
+    DataSource = dsPadrao
+    TabOrder = 1
+  end
+  object edtCadastro: TDBEdit [23]
+    Left = 323
+    Top = 96
     Width = 134
     Height = 21
-    CharCase = ecUpperCase
     DataField = 'CADASTRO'
     DataSource = dsPadrao
     Enabled = False
-    TabOrder = 3
+    TabOrder = 12
   end
   inherited qryPadrao: TFDQuery
     UpdateOptions.AssignedValues = [uvFetchGeneratorsPoint, uvGeneratorName]
     UpdateOptions.FetchGeneratorsPoint = gpImmediate
-    UpdateOptions.GeneratorName = 'GEN_ID_TBLFORNECEDOR'
-    UpdateOptions.AutoIncFields = 'ID_FORNECEDOR'
+    UpdateOptions.GeneratorName = 'GEN_ID_TBLCLIENTE'
+    UpdateOptions.AutoIncFields = 'ID_CLIENTE'
     SQL.Strings = (
-      'SELECT * FROM TBLFORNECEDOR'
-      'ORDER BY ID_FORNECEDOR')
-    object qryPadraoID_FORNECEDOR: TFDAutoIncField
-      FieldName = 'ID_FORNECEDOR'
-      Origin = 'ID_FORNECEDOR'
+      'SELECT '
+      '     ID_CLIENTE,'
+      '     NOME,'
+      '     ENDERECO,'
+      '     NUMERO,'
+      '     BAIRRO,'
+      '     CIDADE,'
+      '     UF,'
+      '     CEP,'
+      '     TELEFONE,'
+      '     CPF,'
+      '     CADASTRO'
+      'FROM TBLCLIENTE'
+      'ORDER BY ID_CLIENTE')
+    Left = 491
+    Top = 64
+    object qryPadraoID_CLIENTE: TFDAutoIncField
+      FieldName = 'ID_CLIENTE'
+      Origin = 'ID_CLIENTE'
       ProviderFlags = [pfInWhere, pfInKey]
-      ReadOnly = True
     end
     object qryPadraoNOME: TStringField
       FieldName = 'NOME'
@@ -288,32 +275,31 @@ inherited frmFornecedor: TfrmFornecedor
       FieldName = 'CEP'
       Origin = 'CEP'
       Required = True
-      EditMask = '#####-###;0;_'
+      EditMask = '#####\-###;0;_'
       Size = 16
     end
     object qryPadraoTELEFONE: TStringField
       FieldName = 'TELEFONE'
       Origin = 'TELEFONE'
       Required = True
-      EditMask = '(##)####-####;0;_'
+      EditMask = '!\(##\)####-####;0;_'
       Size = 16
     end
-    object qryPadraoCNPJ: TStringField
-      FieldName = 'CNPJ'
-      Origin = 'CNPJ'
+    object qryPadraoCPF: TStringField
+      FieldName = 'CPF'
+      Origin = 'CPF'
       Required = True
-      EditMask = '##.###.###/####-##;0;_'
-    end
-    object qryPadraoEMAIL: TStringField
-      FieldName = 'EMAIL'
-      Origin = 'EMAIL'
-      Required = True
-      Size = 100
+      EditMask = '###\.###\.###-##;0;_'
+      Size = 16
     end
     object qryPadraoCADASTRO: TDateField
       FieldName = 'CADASTRO'
       Origin = 'CADASTRO'
       Required = True
     end
+  end
+  inherited dsPadrao: TDataSource
+    Left = 555
+    Top = 64
   end
 end

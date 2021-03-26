@@ -54,10 +54,6 @@ end;
 
 procedure TfrmPesquisaPadrao.cbChavePesquisaChange(Sender: TObject);
 begin
-  edtNome.Text := '';
-  edtInicio.Text := '';
-  edtFim.Text := '';
-
   case cbChavePesquisa.ItemIndex of
    0 :
     begin
@@ -94,13 +90,6 @@ begin
      lblInicio.Caption := 'Data Inicial';
      lblFim.Caption := 'Data Final';
     end;
-
-   4 :
-    begin
-     edtNome.Visible := False;
-     edtInicio.Visible := False;
-     edtFim.Visible := False;
-    end;
   end;
 
   lblNome.Visible := edtNome.Visible;
@@ -112,8 +101,6 @@ procedure TfrmPesquisaPadrao.FormCreate(Sender: TObject);
 begin
   cbChavePesquisa.ItemIndex := 0;
   cbChavePesquisaChange(nil);
-
-  qryPesquisaPadrao.Open;
 end;
 
 procedure TfrmPesquisaPadrao.FormKeyDown(Sender: TObject; var Key: Word;

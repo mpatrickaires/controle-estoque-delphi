@@ -94,10 +94,14 @@ inherited frmCliente: TfrmCliente
   end
   inherited Panel1: TPanel
     TabOrder = 9
+    inherited btnPesquisar: TBitBtn
+      OnClick = btnPesquisarClick
+    end
   end
   inherited Panel2: TPanel
     Top = 324
     TabOrder = 10
+    ExplicitTop = 324
     inherited DBNavigator1: TDBNavigator
       Hints.Strings = ()
     end
@@ -234,6 +238,7 @@ inherited frmCliente: TfrmCliente
       FieldName = 'ID_CLIENTE'
       Origin = 'ID_CLIENTE'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object qryPadraoNOME: TStringField
       FieldName = 'NOME'

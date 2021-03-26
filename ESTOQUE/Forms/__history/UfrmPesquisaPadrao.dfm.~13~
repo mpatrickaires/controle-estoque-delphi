@@ -82,8 +82,7 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
       Left = 8
       Top = 35
       Width = 153
-      Height = 22
-      Style = csOwnerDrawVariable
+      Height = 21
       TabOrder = 0
       OnChange = cbChavePesquisaChange
       Items.Strings = (
@@ -98,7 +97,6 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
       Top = 35
       Width = 209
       Height = 21
-      CharCase = ecUpperCase
       TabOrder = 1
     end
     object edtInicio: TMaskEdit
@@ -171,7 +169,6 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
     Width = 936
     Height = 356
     Align = alClient
-    DataSource = dsPesquisaPadrao
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText

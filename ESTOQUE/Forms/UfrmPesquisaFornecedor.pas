@@ -1,4 +1,4 @@
-unit UfrmPesquisaUsuario;
+unit UfrmPesquisaFornecedor;
 
 interface
 
@@ -11,10 +11,18 @@ uses
   Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons, Vcl.Mask, Vcl.ExtCtrls;
 
 type
-  TfrmPesquisaUsuario = class(TfrmPesquisaPadrao)
-    qryPesquisaPadraoID_USUARIO: TIntegerField;
+  TfrmPesquisaFornecedor = class(TfrmPesquisaPadrao)
+    qryPesquisaPadraoID_FORNECEDOR: TIntegerField;
     qryPesquisaPadraoNOME: TStringField;
-    qryPesquisaPadraoTIPO: TStringField;
+    qryPesquisaPadraoENDERECO: TStringField;
+    qryPesquisaPadraoNUMERO: TIntegerField;
+    qryPesquisaPadraoBAIRRO: TStringField;
+    qryPesquisaPadraoCIDADE: TStringField;
+    qryPesquisaPadraoUF: TStringField;
+    qryPesquisaPadraoCEP: TStringField;
+    qryPesquisaPadraoTELEFONE: TStringField;
+    qryPesquisaPadraoCNPJ: TStringField;
+    qryPesquisaPadraoEMAIL: TStringField;
     qryPesquisaPadraoCADASTRO: TDateField;
     procedure btnPesquisarClick(Sender: TObject);
   private
@@ -24,23 +32,24 @@ type
   end;
 
 var
-  frmPesquisaUsuario: TfrmPesquisaUsuario;
+  frmPesquisaFornecedor: TfrmPesquisaFornecedor;
 
 implementation
 
 {$R *.dfm}
 
-procedure TfrmPesquisaUsuario.btnPesquisarClick(Sender: TObject);
+procedure TfrmPesquisaFornecedor.btnPesquisarClick(Sender: TObject);
 begin
   inherited;
 
-  qryPesquisaPadrao.SQL.Add('SELECT ID_USUARIO, NOME, TIPO, CADASTRO FROM TBLUSUARIO');
+  qryPesquisaPadrao.SQL.Add('SELECT ID_FORNECEDOR, NOME, ENDERECO, NUMERO, BAIRRO, CIDADE, '
+  + 'UF, CEP, TELEFONE, CNPJ, EMAIL, CADASTRO FROM TBLFORNECEDOR');
 
   case cbChavePesquisa.ItemIndex of
    0 : // Pesquisa por Código
     begin
-     qryPesquisaPadrao.SQL.Add('WHERE ID_USUARIO = :pId_Usuario');
-     qryPesquisaPadrao.ParamByName('pId_Usuario').AsString := edtNome.Text;
+     qryPesquisaPadrao.SQL.Add('WHERE ID_FORNECEDOR = :pId_Fornecedor');
+     qryPesquisaPadrao.ParamByName('pId_Fornecedor').AsString := edtNome.Text;
     end;
 
    1 : // Pesquisa por Nome
@@ -64,7 +73,7 @@ begin
 
    4 : // Pesquisa por Data de Cadastro
     begin
-     qryPesquisaPadrao.SQL.Add('ORDER BY ID_USUARIO');
+     qryPesquisaPadrao.SQL.Add('ORDER BY ID_FORNECEDOR');
     end;
   end;
 
