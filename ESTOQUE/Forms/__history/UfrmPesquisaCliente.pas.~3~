@@ -70,7 +70,7 @@ begin
      qryPesquisaPadrao.ParamByName('pFim').AsDate := StrToDate(edtFim.Text);
     end;
 
-   4 : // Pesquisa por Todos os registros
+   4 : // Pesquisa por Data de Cadastro
     begin
      qryPesquisaPadrao.SQL.Add('ORDER BY ID_CLIENTE');
     end;

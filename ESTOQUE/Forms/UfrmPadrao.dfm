@@ -15,6 +15,7 @@ object frmPadrao: TfrmPadrao
   KeyPreview = True
   OldCreateOrder = False
   Position = poScreenCenter
+  OnClose = FormClose
   OnCreate = FormCreate
   OnKeyPress = FormKeyPress
   PixelsPerInch = 96

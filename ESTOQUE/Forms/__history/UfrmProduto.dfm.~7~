@@ -83,11 +83,6 @@ inherited frmProduto: TfrmProduto
     Caption = 'Nome Do Fornecedor'
     FocusControl = edtNomeFornecedor
   end
-  inherited Panel1: TPanel
-    inherited btnPesquisar: TBitBtn
-      OnClick = btnPesquisarClick
-    end
-  end
   inherited Panel2: TPanel
     Top = 256
     ExplicitTop = 256

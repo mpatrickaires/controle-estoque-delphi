@@ -14,7 +14,8 @@ uses
   UfrmPesquisaPadrao in '..\Forms\UfrmPesquisaPadrao.pas' {frmPesquisaPadrao},
   UfrmPesquisaUsuario in '..\Forms\UfrmPesquisaUsuario.pas' {frmPesquisaUsuario},
   UfrmPesquisaCliente in '..\Forms\UfrmPesquisaCliente.pas' {frmPesquisaCliente},
-  UfrmPesquisaFornecedor in '..\Forms\UfrmPesquisaFornecedor.pas' {frmPesquisaFornecedor};
+  UfrmPesquisaFornecedor in '..\Forms\UfrmPesquisaFornecedor.pas' {frmPesquisaFornecedor},
+  UfrmPesquisaProduto in '..\Forms\UfrmPesquisaProduto.pas' {frmPesquisaProduto};
 
 {$R *.res}
 

@@ -71,7 +71,7 @@ begin
      qryPesquisaPadrao.ParamByName('pFim').AsDate := StrToDate(edtFim.Text);
     end;
 
-   4 : // Pesquisa por Data de Cadastro
+   4 : // Pesquisa por Todos os registros
     begin
      qryPesquisaPadrao.SQL.Add('ORDER BY ID_FORNECEDOR');
     end;

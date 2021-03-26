@@ -35,6 +35,7 @@ type
     procedure btnAtualizarClick(Sender: TObject);
     procedure btnSairClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -126,6 +127,11 @@ end;
 procedure TfrmPadrao.btnSairClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TfrmPadrao.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  qryPadrao.Close;
 end;
 
 procedure TfrmPadrao.FormCreate(Sender: TObject);

@@ -10,8 +10,12 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  KeyPreview = True
   OldCreateOrder = False
   WindowState = wsMaximized
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
@@ -23,7 +27,6 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
     Color = 13298927
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 763
     object Label1: TLabel
       Left = 8
       Top = 10
@@ -37,7 +40,7 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
       Font.Style = []
       ParentFont = False
     end
-    object Label2: TLabel
+    object lblNome: TLabel
       Left = 184
       Top = 10
       Width = 42
@@ -50,7 +53,7 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
       Font.Style = []
       ParentFont = False
     end
-    object Label3: TLabel
+    object lblInicio: TLabel
       Left = 416
       Top = 10
       Width = 76
@@ -63,7 +66,7 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
       Font.Style = []
       ParentFont = False
     end
-    object Label4: TLabel
+    object lblFim: TLabel
       Left = 520
       Top = 10
       Width = 63
@@ -80,40 +83,44 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
       Left = 8
       Top = 35
       Width = 153
-      Height = 21
+      Height = 22
+      Style = csOwnerDrawVariable
       TabOrder = 0
+      OnChange = cbChavePesquisaChange
       Items.Strings = (
         'C'#211'DIGO'
         'NOME'
         'CADASTRO'
-        'PER'#205'ODO')
+        'PER'#205'ODO'
+        'TODOS')
     end
     object edtNome: TEdit
       Left = 184
       Top = 35
       Width = 209
       Height = 21
+      CharCase = ecUpperCase
       TabOrder = 1
     end
     object edtInicio: TMaskEdit
       Left = 416
       Top = 35
-      Width = 89
+      Width = 87
       Height = 21
-      EditMask = '!##/##/####;0;_'
+      EditMask = '!##/##/####;1;_'
       MaxLength = 10
       TabOrder = 2
-      Text = ''
+      Text = '  /  /    '
     end
     object edtFim: TMaskEdit
       Left = 520
       Top = 35
-      Width = 89
+      Width = 87
       Height = 21
-      EditMask = '!##/##/####;0;_'
+      EditMask = '!##/##/####;1;_'
       MaxLength = 10
       TabOrder = 3
-      Text = ''
+      Text = '  /  /    '
     end
     object btnPesquisar: TBitBtn
       Left = 631
@@ -128,6 +135,7 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
       Font.Style = []
       ParentFont = False
       TabOrder = 4
+      OnClick = btnPesquisarClick
     end
     object btnImprimir: TBitBtn
       Left = 836
@@ -164,6 +172,7 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
     Width = 936
     Height = 356
     Align = alClient
+    DataSource = dsPesquisaPadrao
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -180,10 +189,9 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
     Color = 13298927
     ParentBackground = False
     TabOrder = 2
-    ExplicitTop = 8
-    ExplicitWidth = 763
   end
   object qryPesquisaPadrao: TFDQuery
+    Connection = DM.Conexao
     Left = 416
     Top = 80
   end

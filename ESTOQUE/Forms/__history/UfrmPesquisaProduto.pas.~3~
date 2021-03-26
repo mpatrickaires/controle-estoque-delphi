@@ -1,4 +1,4 @@
-unit UfrmPesquisaCliente;
+unit UfrmPesquisaProduto;
 
 interface
 
@@ -11,18 +11,17 @@ uses
   Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons, Vcl.Mask, Vcl.ExtCtrls;
 
 type
-  TfrmPesquisaCliente = class(TfrmPesquisaPadrao)
-    qryPesquisaPadraoID_CLIENTE: TIntegerField;
-    qryPesquisaPadraoNOME: TStringField;
-    qryPesquisaPadraoENDERECO: TStringField;
-    qryPesquisaPadraoNUMERO: TIntegerField;
-    qryPesquisaPadraoBAIRRO: TStringField;
-    qryPesquisaPadraoCIDADE: TStringField;
-    qryPesquisaPadraoUF: TStringField;
-    qryPesquisaPadraoCEP: TStringField;
-    qryPesquisaPadraoTELEFONE: TStringField;
-    qryPesquisaPadraoCPF: TStringField;
+  TfrmPesquisaProduto = class(TfrmPesquisaPadrao)
+    qryPesquisaPadraoID_PRODUTO: TIntegerField;
+    qryPesquisaPadraoPRODUTO_DESCRICAO: TStringField;
+    qryPesquisaPadraoVL_CUSTO: TFMTBCDField;
+    qryPesquisaPadraoVL_VENDA: TFMTBCDField;
+    qryPesquisaPadraoESTOQUE: TFMTBCDField;
+    qryPesquisaPadraoESTOQUE_MIN: TFMTBCDField;
+    qryPesquisaPadraoUNIDADE: TStringField;
     qryPesquisaPadraoCADASTRO: TDateField;
+    qryPesquisaPadraoID_FORNECEDOR: TIntegerField;
+    qryPesquisaPadraoNOME: TStringField;
     procedure btnPesquisarClick(Sender: TObject);
   private
     { Private declarations }
@@ -31,48 +30,49 @@ type
   end;
 
 var
-  frmPesquisaCliente: TfrmPesquisaCliente;
+  frmPesquisaProduto: TfrmPesquisaProduto;
 
 implementation
 
 {$R *.dfm}
 
-procedure TfrmPesquisaCliente.btnPesquisarClick(Sender: TObject);
+procedure TfrmPesquisaProduto.btnPesquisarClick(Sender: TObject);
 begin
   inherited;
 
-  qryPesquisaPadrao.SQL.Add('SELECT ID_CLIENTE, NOME, ENDERECO, NUMERO, BAIRRO, CIDADE, '
-  + 'UF, CEP, TELEFONE, CPF, CADASTRO FROM TBLCLIENTE');
+  qryPesquisaPadrao.SQL.Add('SELECT A.ID_PRODUTO, A.PRODUTO_DESCRICAO, A.VL_CUSTO, A.VL_VENDA, '
+  + 'A.ESTOQUE, A.ESTOQUE_MIN, A.UNIDADE, A.CADASTRO, A.ID_FORNECEDOR, B.NOME FROM TBLPRODUTO A '
+  + 'INNER JOIN TBLFORNECEDOR B ON A.ID_FORNECEDOR = B.ID_FORNECEDOR');
 
   case cbChavePesquisa.ItemIndex of
    0 : // Pesquisa por Código
     begin
-     qryPesquisaPadrao.SQL.Add('WHERE ID_CLIENTE = :pId_Cliente');
-     qryPesquisaPadrao.ParamByName('pId_Cliente').AsString := edtNome.Text;
+     qryPesquisaPadrao.SQL.Add('WHERE A.ID_PRODUTO = :pId_Produto');
+     qryPesquisaPadrao.ParamByName('pId_Produto').AsString := edtNome.Text;
     end;
 
    1 : // Pesquisa por Nome
     begin
-     qryPesquisaPadrao.SQL.Add('WHERE NOME LIKE :pNome');
-     qryPesquisaPadrao.ParamByName('pNome').AsString := '%' + edtNome.Text + '%';
+     qryPesquisaPadrao.SQL.Add('WHERE A.PRODUTO_DESCRICAO LIKE :pDescricao');
+     qryPesquisaPadrao.ParamByName('pDescricao').AsString := '%' + edtNome.Text + '%';
     end;
 
    2 : // Pesquisa por Data de Cadastro
     begin
-     qryPesquisaPadrao.SQL.Add('WHERE CADASTRO = :pCadastro');
+     qryPesquisaPadrao.SQL.Add('WHERE A.CADASTRO = :pCadastro');
      qryPesquisaPadrao.ParamByName('pCadastro').AsDate := StrToDate(edtInicio.Text);
     end;
 
    3 : // Pesquisa por Período
     begin
-     qryPesquisaPadrao.SQL.Add('WHERE CADASTRO BETWEEN :pInicio AND :pFim');
+     qryPesquisaPadrao.SQL.Add('WHERE A.CADASTRO BETWEEN :pInicio AND :pFim');
      qryPesquisaPadrao.ParamByName('pInicio').AsDate := StrToDate(edtInicio.Text);
      qryPesquisaPadrao.ParamByName('pFim').AsDate := StrToDate(edtFim.Text);
     end;
 
    4 : // Pesquisa por Todos os registros
     begin
-     qryPesquisaPadrao.SQL.Add('ORDER BY ID_CLIENTE');
+     qryPesquisaPadrao.SQL.Add('ORDER BY A.ID_PRODUTO');
     end;
   end;
 

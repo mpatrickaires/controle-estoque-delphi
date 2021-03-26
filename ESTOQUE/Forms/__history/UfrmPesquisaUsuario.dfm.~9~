@@ -3,6 +3,7 @@ inherited frmPesquisaUsuario: TfrmPesquisaUsuario
   PixelsPerInch = 96
   TextHeight = 13
   inherited DBGrid1: TDBGrid
+    DataSource = dsPesquisaPadrao
     Columns = <
       item
         Expanded = False

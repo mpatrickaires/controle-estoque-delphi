@@ -169,14 +169,14 @@ end;
 
 procedure TfrmPrincipal.abreTelaProduto;
 var
-  ObjFrmProduto : TfrmProduto;
+  ObjFrmFormaPgto : TfrmFormaPgto;
 begin
-  ObjFrmProduto := TfrmProduto.Create(nil);
+  ObjFrmFormaPgto := TfrmFormaPgto.Create(nil);
 
   try
-    ObjFrmProduto.ShowModal;
+    ObjFrmFormaPgto.ShowModal;
   finally
-    ObjFrmProduto.Free;
+    ObjFrmFormaPgto.Free;
   end;
 end;
 

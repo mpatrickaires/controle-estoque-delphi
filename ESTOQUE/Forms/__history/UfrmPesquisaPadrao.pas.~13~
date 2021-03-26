@@ -32,7 +32,6 @@ type
     procedure cbChavePesquisaChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -107,12 +106,6 @@ begin
   lblNome.Visible := edtNome.Visible;
   lblInicio.Visible := edtInicio.Visible;
   lblFim.Visible := edtFim.Visible;
-end;
-
-procedure TfrmPesquisaPadrao.FormClose(Sender: TObject;
-  var Action: TCloseAction);
-begin
-  qryPesquisaPadrao.Close;
 end;
 
 procedure TfrmPesquisaPadrao.FormCreate(Sender: TObject);

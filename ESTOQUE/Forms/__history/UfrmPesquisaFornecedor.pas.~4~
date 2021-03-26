@@ -1,4 +1,4 @@
-unit UfrmPesquisaCliente;
+unit UfrmPesquisaFornecedor;
 
 interface
 
@@ -11,8 +11,8 @@ uses
   Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons, Vcl.Mask, Vcl.ExtCtrls;
 
 type
-  TfrmPesquisaCliente = class(TfrmPesquisaPadrao)
-    qryPesquisaPadraoID_CLIENTE: TIntegerField;
+  TfrmPesquisaFornecedor = class(TfrmPesquisaPadrao)
+    qryPesquisaPadraoID_FORNECEDOR: TIntegerField;
     qryPesquisaPadraoNOME: TStringField;
     qryPesquisaPadraoENDERECO: TStringField;
     qryPesquisaPadraoNUMERO: TIntegerField;
@@ -21,7 +21,8 @@ type
     qryPesquisaPadraoUF: TStringField;
     qryPesquisaPadraoCEP: TStringField;
     qryPesquisaPadraoTELEFONE: TStringField;
-    qryPesquisaPadraoCPF: TStringField;
+    qryPesquisaPadraoCNPJ: TStringField;
+    qryPesquisaPadraoEMAIL: TStringField;
     qryPesquisaPadraoCADASTRO: TDateField;
     procedure btnPesquisarClick(Sender: TObject);
   private
@@ -31,24 +32,24 @@ type
   end;
 
 var
-  frmPesquisaCliente: TfrmPesquisaCliente;
+  frmPesquisaFornecedor: TfrmPesquisaFornecedor;
 
 implementation
 
 {$R *.dfm}
 
-procedure TfrmPesquisaCliente.btnPesquisarClick(Sender: TObject);
+procedure TfrmPesquisaFornecedor.btnPesquisarClick(Sender: TObject);
 begin
   inherited;
 
-  qryPesquisaPadrao.SQL.Add('SELECT ID_CLIENTE, NOME, ENDERECO, NUMERO, BAIRRO, CIDADE, '
-  + 'UF, CEP, TELEFONE, CPF, CADASTRO FROM TBLCLIENTE');
+  qryPesquisaPadrao.SQL.Add('SELECT ID_FORNECEDOR, NOME, ENDERECO, NUMERO, BAIRRO, CIDADE, '
+  + 'UF, CEP, TELEFONE, CNPJ, EMAIL, CADASTRO FROM TBLFORNECEDOR');
 
   case cbChavePesquisa.ItemIndex of
    0 : // Pesquisa por Código
     begin
-     qryPesquisaPadrao.SQL.Add('WHERE ID_CLIENTE = :pId_Cliente');
-     qryPesquisaPadrao.ParamByName('pId_Cliente').AsString := edtNome.Text;
+     qryPesquisaPadrao.SQL.Add('WHERE ID_FORNECEDOR = :pId_Fornecedor');
+     qryPesquisaPadrao.ParamByName('pId_Fornecedor').AsString := edtNome.Text;
     end;
 
    1 : // Pesquisa por Nome
@@ -70,9 +71,9 @@ begin
      qryPesquisaPadrao.ParamByName('pFim').AsDate := StrToDate(edtFim.Text);
     end;
 
-   4 : // Pesquisa por Todos os registros
+   4 : // Pesquisa por Data de Cadastro
     begin
-     qryPesquisaPadrao.SQL.Add('ORDER BY ID_CLIENTE');
+     qryPesquisaPadrao.SQL.Add('ORDER BY ID_FORNECEDOR');
     end;
   end;
 

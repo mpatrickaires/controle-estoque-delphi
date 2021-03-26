@@ -1,4 +1,4 @@
-unit UfrmPesquisaUsuario;
+unit UfrmPesquisaProduto;
 
 interface
 
@@ -11,7 +11,7 @@ uses
   Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons, Vcl.Mask, Vcl.ExtCtrls;
 
 type
-  TfrmPesquisaUsuario = class(TfrmPesquisaPadrao)
+  TfrmPesquisaPadrao1 = class(TfrmPesquisaPadrao)
   private
     { Private declarations }
   public
@@ -19,7 +19,7 @@ type
   end;
 
 var
-  frmPesquisaUsuario: TfrmPesquisaUsuario;
+  frmPesquisaPadrao1: TfrmPesquisaPadrao1;
 
 implementation
 

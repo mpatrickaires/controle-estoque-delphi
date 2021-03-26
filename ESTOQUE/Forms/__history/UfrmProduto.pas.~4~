@@ -43,7 +43,6 @@ type
     cbUnidade: TDBComboBox;
     qryPadraoID_PRODUTO: TIntegerField;
     procedure btnNovoClick(Sender: TObject);
-    procedure btnPesquisarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -55,9 +54,6 @@ var
 
 implementation
 
-uses
-  UfrmPesquisaProduto;
-
 {$R *.dfm}
 
 procedure TfrmProduto.btnNovoClick(Sender: TObject);
@@ -65,19 +61,6 @@ begin
   inherited;
   edtCadastro.Text := DateToStr(Now);
   edtIDProduto.SetFocus;
-end;
-
-procedure TfrmProduto.btnPesquisarClick(Sender: TObject);
-var
-  ObjFrmPesquisaProduto : TfrmPesquisaProduto;
-begin
-  inherited;
-  ObjFrmPesquisaProduto := TfrmPesquisaProduto.Create(nil);
-  try
-   ObjFrmPesquisaProduto.ShowModal;
-  finally
-   ObjFrmPesquisaProduto.Free;
-  end;
 end;
 
 end.
