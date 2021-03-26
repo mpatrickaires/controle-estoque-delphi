@@ -10,7 +10,6 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  KeyPreview = True
   OldCreateOrder = False
   WindowState = wsMaximized
   OnCreate = FormCreate
@@ -39,7 +38,7 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
       Font.Style = []
       ParentFont = False
     end
-    object lblNome: TLabel
+    object Label2: TLabel
       Left = 184
       Top = 10
       Width = 42
@@ -52,7 +51,7 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
       Font.Style = []
       ParentFont = False
     end
-    object lblInicio: TLabel
+    object Label3: TLabel
       Left = 416
       Top = 10
       Width = 76
@@ -65,7 +64,7 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
       Font.Style = []
       ParentFont = False
     end
-    object lblFim: TLabel
+    object Label4: TLabel
       Left = 520
       Top = 10
       Width = 63
@@ -101,22 +100,22 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
     object edtInicio: TMaskEdit
       Left = 416
       Top = 35
-      Width = 87
+      Width = 89
       Height = 21
-      EditMask = '!##/##/####;1;_'
+      EditMask = '!##/##/####;0;_'
       MaxLength = 10
       TabOrder = 2
-      Text = '  /  /    '
+      Text = ''
     end
     object edtFim: TMaskEdit
       Left = 520
       Top = 35
-      Width = 87
+      Width = 89
       Height = 21
-      EditMask = '!##/##/####;1;_'
+      EditMask = '!##/##/####;0;_'
       MaxLength = 10
       TabOrder = 3
-      Text = '  /  /    '
+      Text = ''
     end
     object btnPesquisar: TBitBtn
       Left = 631

@@ -37,7 +37,7 @@ begin
   qryPesquisaPadrao.SQL.Add('SELECT ID_USUARIO, NOME, TIPO, CADASTRO FROM TBLUSUARIO');
 
   case cbChavePesquisa.ItemIndex of
-   0 : // Pesquisa por CÛdigo
+   0 : // Pesquisa por C√≥digo
     begin
      qryPesquisaPadrao.SQL.Add('WHERE ID_USUARIO = :pId_Usuario');
      qryPesquisaPadrao.ParamByName('pId_Usuario').AsString := edtNome.Text;
@@ -55,11 +55,16 @@ begin
      qryPesquisaPadrao.ParamByName('pCadastro').AsDate := StrToDate(edtInicio.Text);
     end;
 
-   3 : // Pesquisa por PerÌodo
+   3 : // Pesquisa por Per√≠odo
     begin
      qryPesquisaPadrao.SQL.Add('WHERE CADASTRO BETWEEN :pInicio AND :pFim');
      qryPesquisaPadrao.ParamByName('pInicio').AsDate := StrToDate(edtInicio.Text);
      qryPesquisaPadrao.ParamByName('pFim').AsDate := StrToDate(edtFim.Text);
+    end;
+
+   4 : // Pesquisa por Data de Cadastro
+    begin
+     qryPesquisaPadrao.SQL.Add('ORDER BY ID_USUARIO');
     end;
   end;
 
@@ -67,7 +72,7 @@ begin
 
   if qryPesquisaPadrao.IsEmpty then
    begin
-    MessageDlg('Registro n„o encontrado!', mtInformation, [mbOK], 0);
+    MessageDlg('Registro n√£o encontrado!', mtInformation, [mbOK], 0);
    end;
 end;
 

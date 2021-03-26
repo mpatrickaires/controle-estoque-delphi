@@ -10,6 +10,7 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  KeyPreview = True
   OldCreateOrder = False
   WindowState = wsMaximized
   OnCreate = FormCreate
@@ -88,7 +89,8 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
         'C'#211'DIGO'
         'NOME'
         'CADASTRO'
-        'PER'#205'ODO')
+        'PER'#205'ODO'
+        'TODOS')
     end
     object edtNome: TEdit
       Left = 184
@@ -100,22 +102,22 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
     object edtInicio: TMaskEdit
       Left = 416
       Top = 35
-      Width = 89
+      Width = 87
       Height = 21
-      EditMask = '!##/##/####;0;_'
+      EditMask = '!##/##/####;1;_'
       MaxLength = 10
       TabOrder = 2
-      Text = ''
+      Text = '  /  /    '
     end
     object edtFim: TMaskEdit
       Left = 520
       Top = 35
-      Width = 89
+      Width = 87
       Height = 21
-      EditMask = '!##/##/####;0;_'
+      EditMask = '!##/##/####;1;_'
       MaxLength = 10
       TabOrder = 3
-      Text = ''
+      Text = '  /  /    '
     end
     object btnPesquisar: TBitBtn
       Left = 631

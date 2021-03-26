@@ -18,9 +18,9 @@ type
     edtNome: TEdit;
     edtInicio: TMaskEdit;
     edtFim: TMaskEdit;
-    Label2: TLabel;
-    Label3: TLabel;
-    Label4: TLabel;
+    lblNome: TLabel;
+    lblInicio: TLabel;
+    lblFim: TLabel;
     DBGrid1: TDBGrid;
     Panel2: TPanel;
     btnPesquisar: TBitBtn;
@@ -60,6 +60,8 @@ begin
      edtNome.Visible := True;
      edtInicio.Visible := False;
      edtFim.Visible := False;
+
+     lblNome.Caption := 'Código';
     end;
 
    1 :
@@ -67,6 +69,7 @@ begin
      edtNome.Visible := True;
      edtInicio.Visible := False;
      edtFim.Visible := False;
+     lblNome.Caption := 'Nome';
     end;
 
    2 :
@@ -74,6 +77,8 @@ begin
      edtNome.Visible := False;
      edtInicio.Visible := True;
      edtFim.Visible := False;
+
+     lblInicio.Caption := 'Data';
     end;
 
    3 :
@@ -81,8 +86,15 @@ begin
      edtNome.Visible := False;
      edtInicio.Visible := True;
      edtFim.Visible := True;
+
+     lblInicio.Caption := 'Data Inicial';
+     lblFim.Caption := 'Data Final';
     end;
   end;
+
+  lblNome.Visible := edtNome.Visible;
+  lblInicio.Visible := edtInicio.Visible;
+  lblFim.Visible := edtFim.Visible;
 end;
 
 procedure TfrmPesquisaPadrao.FormCreate(Sender: TObject);
@@ -94,7 +106,7 @@ end;
 procedure TfrmPesquisaPadrao.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
-  if Key = VK_RETURN then btnPesquisarClick(nil)
+  if Key = VK_RETURN then btnPesquisar.Click
 
   else if Key = VK_ESCAPE then Close;
 end;

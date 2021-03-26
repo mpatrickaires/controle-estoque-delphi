@@ -37,29 +37,16 @@ begin
   qryPesquisaPadrao.SQL.Add('SELECT ID_USUARIO, NOME, TIPO, CADASTRO FROM TBLUSUARIO');
 
   case cbChavePesquisa.ItemIndex of
-   0 : // Pesquisa por Código
+   0 :
     begin
      qryPesquisaPadrao.SQL.Add('WHERE ID_USUARIO = :pId_Usuario');
      qryPesquisaPadrao.ParamByName('pId_Usuario').AsString := edtNome.Text;
     end;
 
-   1 : // Pesquisa por Nome
+   1 :
     begin
      qryPesquisaPadrao.SQL.Add('WHERE NOME LIKE :pNome');
      qryPesquisaPadrao.ParamByName('pNome').AsString := '%' + edtNome.Text + '%';
-    end;
-
-   2 : // Pesquisa por Data de Cadastro
-    begin
-     qryPesquisaPadrao.SQL.Add('WHERE CADASTRO = :pCadastro');
-     qryPesquisaPadrao.ParamByName('pCadastro').AsDate := StrToDate(edtInicio.Text);
-    end;
-
-   3 : // Pesquisa por Período
-    begin
-     qryPesquisaPadrao.SQL.Add('WHERE CADASTRO BETWEEN :pInicio AND :pFim');
-     qryPesquisaPadrao.ParamByName('pInicio').AsDate := StrToDate(edtInicio.Text);
-     qryPesquisaPadrao.ParamByName('pFim').AsDate := StrToDate(edtFim.Text);
     end;
   end;
 

@@ -101,22 +101,22 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
     object edtInicio: TMaskEdit
       Left = 416
       Top = 35
-      Width = 87
+      Width = 89
       Height = 21
-      EditMask = '!##/##/####;1;_'
+      EditMask = '!##/##/####;0;_'
       MaxLength = 10
       TabOrder = 2
-      Text = '  /  /    '
+      Text = ''
     end
     object edtFim: TMaskEdit
       Left = 520
       Top = 35
-      Width = 87
+      Width = 89
       Height = 21
-      EditMask = '!##/##/####;1;_'
+      EditMask = '!##/##/####;0;_'
       MaxLength = 10
       TabOrder = 3
-      Text = '  /  /    '
+      Text = ''
     end
     object btnPesquisar: TBitBtn
       Left = 631

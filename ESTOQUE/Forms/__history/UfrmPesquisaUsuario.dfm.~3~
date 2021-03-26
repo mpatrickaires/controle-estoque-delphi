@@ -2,6 +2,14 @@ inherited frmPesquisaUsuario: TfrmPesquisaUsuario
   Caption = 'Pesquisa de Usu'#225'rios'
   PixelsPerInch = 96
   TextHeight = 13
+  inherited Panel1: TPanel
+    inherited cbChavePesquisa: TComboBox
+      OnChange = cbChavePesquisaChange
+    end
+    inherited btnPesquisar: TBitBtn
+      OnClick = btnPesquisarClick
+    end
+  end
   inherited DBGrid1: TDBGrid
     DataSource = dsPesquisaPadrao
     Columns = <

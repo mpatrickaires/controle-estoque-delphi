@@ -54,13 +54,6 @@ begin
      qryPesquisaPadrao.SQL.Add('WHERE CADASTRO = :pCadastro');
      qryPesquisaPadrao.ParamByName('pCadastro').AsDate := StrToDate(edtInicio.Text);
     end;
-
-   3 : // Pesquisa por Período
-    begin
-     qryPesquisaPadrao.SQL.Add('WHERE CADASTRO BETWEEN :pInicio AND :pFim');
-     qryPesquisaPadrao.ParamByName('pInicio').AsDate := StrToDate(edtInicio.Text);
-     qryPesquisaPadrao.ParamByName('pFim').AsDate := StrToDate(edtFim.Text);
-    end;
   end;
 
   qryPesquisaPadrao.Open;
