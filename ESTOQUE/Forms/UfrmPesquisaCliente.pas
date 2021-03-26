@@ -24,6 +24,7 @@ type
     qryPesquisaPadraoCPF: TStringField;
     qryPesquisaPadraoCADASTRO: TDateField;
     procedure btnPesquisarClick(Sender: TObject);
+    procedure btnTransferirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -82,6 +83,12 @@ begin
    begin
     MessageDlg('Registro não encontrado!', mtInformation, [mbOK], 0);
    end;
+end;
+
+procedure TfrmPesquisaCliente.btnTransferirClick(Sender: TObject);
+begin
+  inherited;
+  Codigo := qryPesquisaPadraoID_CLIENTE.AsInteger;
 end;
 
 end.

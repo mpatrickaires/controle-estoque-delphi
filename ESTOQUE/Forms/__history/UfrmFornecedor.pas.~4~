@@ -1,4 +1,4 @@
-unit UfrmCliente;
+unit UfrmFornecedor;
 
 interface
 
@@ -11,8 +11,8 @@ uses
   Vcl.Buttons, Vcl.ExtCtrls, Vcl.Mask;
 
 type
-  TfrmCliente = class(TfrmPadrao)
-    qryPadraoID_CLIENTE: TFDAutoIncField;
+  TfrmFornecedor = class(TfrmPadrao)
+    qryPadraoID_FORNECEDOR: TFDAutoIncField;
     qryPadraoNOME: TStringField;
     qryPadraoENDERECO: TStringField;
     qryPadraoNUMERO: TIntegerField;
@@ -21,10 +21,11 @@ type
     qryPadraoUF: TStringField;
     qryPadraoCEP: TStringField;
     qryPadraoTELEFONE: TStringField;
-    qryPadraoCPF: TStringField;
+    qryPadraoCNPJ: TStringField;
+    qryPadraoEMAIL: TStringField;
     qryPadraoCADASTRO: TDateField;
     Label1: TLabel;
-    edtIDCliente: TDBEdit;
+    edtIDFornecedor: TDBEdit;
     Label2: TLabel;
     edtNome: TDBEdit;
     Label3: TLabel;
@@ -42,7 +43,9 @@ type
     Label9: TLabel;
     edtTelefone: TDBEdit;
     Label10: TLabel;
-    edtCpf: TDBEdit;
+    edtCNPJ: TDBEdit;
+    Label11: TLabel;
+    edtEmail: TDBEdit;
     Label12: TLabel;
     edtCadastro: TDBEdit;
     procedure btnNovoClick(Sender: TObject);
@@ -54,38 +57,31 @@ type
   end;
 
 var
-  frmCliente: TfrmCliente;
+  frmFornecedor: TfrmFornecedor;
 
 implementation
 
-uses
-  UfrmPesquisaCliente;
-
 {$R *.dfm}
 
-procedure TfrmCliente.btnNovoClick(Sender: TObject);
+uses uDM, UfrmPesquisaFornecedor;
+
+procedure TfrmFornecedor.btnNovoClick(Sender: TObject);
 begin
   inherited;
   edtCadastro.Text := DateToStr(Now);
   edtNome.SetFocus;
 end;
 
-procedure TfrmCliente.btnPesquisarClick(Sender: TObject);
+procedure TfrmFornecedor.btnPesquisarClick(Sender: TObject);
 var
-  objFrmPesquisaCliente : TfrmPesquisaCliente;
+  ObjFrmPesquisaFornecedor : TFrmPesquisaFornecedor;
 begin
   inherited;
-  objFrmPesquisaCliente := TfrmPesquisaCliente.Create(nil);
+  ObjFrmPesquisaFornecedor := TFrmPesquisaFornecedor.Create(nil);
   try
-   objFrmPesquisaCliente.ShowModal;
-
-   if objFrmPesquisaCliente.Codigo > 0 then
-    begin
-     qryPadrao.Open;
-     qryPadrao.Locate('ID_CLIENTE', objFrmPesquisaCliente.Codigo, []);
-    end;
+   ObjFrmPesquisaFornecedor.ShowModal;
   finally
-   objFrmPesquisaCliente.Free;
+   ObjFrmPesquisaFornecedor.Free;
   end;
 end;
 

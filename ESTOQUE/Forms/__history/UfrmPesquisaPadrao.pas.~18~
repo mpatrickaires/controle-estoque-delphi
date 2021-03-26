@@ -34,7 +34,6 @@ type
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnTransferirClick(Sender: TObject);
-    procedure DBGrid1DblClick(Sender: TObject);
   private
     { Private declarations }
     FCodigo : Integer;
@@ -117,11 +116,6 @@ begin
   lblNome.Visible := edtNome.Visible;
   lblInicio.Visible := edtInicio.Visible;
   lblFim.Visible := edtFim.Visible;
-end;
-
-procedure TfrmPesquisaPadrao.DBGrid1DblClick(Sender: TObject);
-begin
-  btnTransferir.Click;
 end;
 
 procedure TfrmPesquisaPadrao.FormClose(Sender: TObject;

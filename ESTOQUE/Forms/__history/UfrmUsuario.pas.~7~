@@ -58,12 +58,6 @@ begin
 
   try
    ObjFrmPesquisaUsuario.ShowModal;
-
-   if objFrmPesquisaUsuario.Codigo > 0 then
-    begin
-     qryPadrao.Open;
-     qryPadrao.Locate('ID_USUARIO', objFrmPesquisaUsuario.Codigo, []);
-    end;
   finally
    ObjFrmPesquisaUsuario.Free;
   end;

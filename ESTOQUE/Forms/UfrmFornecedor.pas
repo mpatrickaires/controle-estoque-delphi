@@ -80,6 +80,12 @@ begin
   ObjFrmPesquisaFornecedor := TFrmPesquisaFornecedor.Create(nil);
   try
    ObjFrmPesquisaFornecedor.ShowModal;
+
+   if ObjFrmPesquisaFornecedor.Codigo > 0 then
+    begin
+     qryPadrao.Open;
+     qryPadrao.Locate('ID_FORNECEDOR', ObjFrmPesquisaFornecedor.Codigo, []);
+    end;
   finally
    ObjFrmPesquisaFornecedor.Free;
   end;

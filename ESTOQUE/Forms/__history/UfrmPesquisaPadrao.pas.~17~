@@ -34,7 +34,6 @@ type
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnTransferirClick(Sender: TObject);
-    procedure DBGrid1DblClick(Sender: TObject);
   private
     { Private declarations }
     FCodigo : Integer;
@@ -59,8 +58,7 @@ end;
 
 procedure TfrmPesquisaPadrao.btnTransferirClick(Sender: TObject);
 begin
-  if qryPesquisaPadrao.RecordCount > 0 then ModalResult := mrOK
-  else Abort;
+  if qryPesquisaPadrao.RecordCount <= 0 then Abort;
 end;
 
 procedure TfrmPesquisaPadrao.cbChavePesquisaChange(Sender: TObject);
@@ -117,11 +115,6 @@ begin
   lblNome.Visible := edtNome.Visible;
   lblInicio.Visible := edtInicio.Visible;
   lblFim.Visible := edtFim.Visible;
-end;
-
-procedure TfrmPesquisaPadrao.DBGrid1DblClick(Sender: TObject);
-begin
-  btnTransferir.Click;
 end;
 
 procedure TfrmPesquisaPadrao.FormClose(Sender: TObject;

@@ -75,12 +75,6 @@ begin
   ObjFrmPesquisaProduto := TfrmPesquisaProduto.Create(nil);
   try
    ObjFrmPesquisaProduto.ShowModal;
-
-   if objFrmPesquisaProduto.Codigo > 0 then
-    begin
-     qryPadrao.Open;
-     qryPadrao.Locate('ID_PRODUTO', objFrmPesquisaProduto.Codigo, []);
-    end;
   finally
    ObjFrmPesquisaProduto.Free;
   end;

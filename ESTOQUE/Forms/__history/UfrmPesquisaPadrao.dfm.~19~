@@ -459,6 +459,7 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEEF7ED96C99565AD
         614FA04B489A4547984253B1505EB65B75C07295CF93C3E3C1F6FBF6FFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+      ModalResult = 1
       ParentFont = False
       TabOrder = 6
       OnClick = btnTransferirClick
@@ -478,7 +479,6 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
-    OnDblClick = DBGrid1DblClick
   end
   object Panel2: TPanel
     Left = 0

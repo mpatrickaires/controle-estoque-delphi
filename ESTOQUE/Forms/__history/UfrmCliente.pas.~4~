@@ -78,12 +78,6 @@ begin
   objFrmPesquisaCliente := TfrmPesquisaCliente.Create(nil);
   try
    objFrmPesquisaCliente.ShowModal;
-
-   if objFrmPesquisaCliente.Codigo > 0 then
-    begin
-     qryPadrao.Open;
-     qryPadrao.Locate('ID_CLIENTE', objFrmPesquisaCliente.Codigo, []);
-    end;
   finally
    objFrmPesquisaCliente.Free;
   end;

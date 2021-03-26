@@ -461,7 +461,6 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       ParentFont = False
       TabOrder = 6
-      OnClick = btnTransferirClick
     end
   end
   object DBGrid1: TDBGrid
@@ -471,14 +470,12 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
     Height = 356
     Align = alClient
     DataSource = dsPesquisaPadrao
-    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
-    OnDblClick = DBGrid1DblClick
   end
   object Panel2: TPanel
     Left = 0

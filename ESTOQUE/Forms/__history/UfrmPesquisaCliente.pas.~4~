@@ -1,4 +1,4 @@
-unit UfrmPesquisaFornecedor;
+unit UfrmPesquisaCliente;
 
 interface
 
@@ -11,8 +11,8 @@ uses
   Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons, Vcl.Mask, Vcl.ExtCtrls;
 
 type
-  TfrmPesquisaFornecedor = class(TfrmPesquisaPadrao)
-    qryPesquisaPadraoID_FORNECEDOR: TIntegerField;
+  TfrmPesquisaCliente = class(TfrmPesquisaPadrao)
+    qryPesquisaPadraoID_CLIENTE: TIntegerField;
     qryPesquisaPadraoNOME: TStringField;
     qryPesquisaPadraoENDERECO: TStringField;
     qryPesquisaPadraoNUMERO: TIntegerField;
@@ -21,11 +21,9 @@ type
     qryPesquisaPadraoUF: TStringField;
     qryPesquisaPadraoCEP: TStringField;
     qryPesquisaPadraoTELEFONE: TStringField;
-    qryPesquisaPadraoCNPJ: TStringField;
-    qryPesquisaPadraoEMAIL: TStringField;
+    qryPesquisaPadraoCPF: TStringField;
     qryPesquisaPadraoCADASTRO: TDateField;
     procedure btnPesquisarClick(Sender: TObject);
-    procedure btnTransferirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -33,24 +31,24 @@ type
   end;
 
 var
-  frmPesquisaFornecedor: TfrmPesquisaFornecedor;
+  frmPesquisaCliente: TfrmPesquisaCliente;
 
 implementation
 
 {$R *.dfm}
 
-procedure TfrmPesquisaFornecedor.btnPesquisarClick(Sender: TObject);
+procedure TfrmPesquisaCliente.btnPesquisarClick(Sender: TObject);
 begin
   inherited;
 
-  qryPesquisaPadrao.SQL.Add('SELECT ID_FORNECEDOR, NOME, ENDERECO, NUMERO, BAIRRO, CIDADE, '
-  + 'UF, CEP, TELEFONE, CNPJ, EMAIL, CADASTRO FROM TBLFORNECEDOR');
+  qryPesquisaPadrao.SQL.Add('SELECT ID_CLIENTE, NOME, ENDERECO, NUMERO, BAIRRO, CIDADE, '
+  + 'UF, CEP, TELEFONE, CPF, CADASTRO FROM TBLCLIENTE');
 
   case cbChavePesquisa.ItemIndex of
    0 : // Pesquisa por Código
     begin
-     qryPesquisaPadrao.SQL.Add('WHERE ID_FORNECEDOR = :pId_Fornecedor');
-     qryPesquisaPadrao.ParamByName('pId_Fornecedor').AsString := edtNome.Text;
+     qryPesquisaPadrao.SQL.Add('WHERE ID_CLIENTE = :pId_Cliente');
+     qryPesquisaPadrao.ParamByName('pId_Cliente').AsString := edtNome.Text;
     end;
 
    1 : // Pesquisa por Nome
@@ -74,7 +72,7 @@ begin
 
    4 : // Pesquisa por Todos os registros
     begin
-     qryPesquisaPadrao.SQL.Add('ORDER BY ID_FORNECEDOR');
+     qryPesquisaPadrao.SQL.Add('ORDER BY ID_CLIENTE');
     end;
   end;
 
@@ -84,12 +82,6 @@ begin
    begin
     MessageDlg('Registro não encontrado!', mtInformation, [mbOK], 0);
    end;
-end;
-
-procedure TfrmPesquisaFornecedor.btnTransferirClick(Sender: TObject);
-begin
-  inherited;
-  Codigo := qryPesquisaPadraoID_FORNECEDOR.AsInteger;
 end;
 
 end.
