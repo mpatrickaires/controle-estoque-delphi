@@ -83,8 +83,8 @@
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
-        <DCC_ExeOutput>M:\sistema-estoque-delphi_udemy\ESTOQUE\EXE\</DCC_ExeOutput>
-        <DCC_DcuOutput>M:\sistema-estoque-delphi_udemy\ESTOQUE\DCU\</DCC_DcuOutput>
+        <DCC_ExeOutput>M:\aprendizado-delphi\sistema-estoque-delphi_udemy\ESTOQUE\EXE\</DCC_ExeOutput>
+        <DCC_DcuOutput>M:\aprendizado-delphi\sistema-estoque-delphi_udemy\ESTOQUE\DCU\</DCC_DcuOutput>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>

@@ -8,7 +8,7 @@ uses
   Data.DB, Vcl.Grids, Vcl.DBGrids, FireDAC.Stan.Intf, FireDAC.Stan.Option,
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
   FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client, Vcl.Buttons, uDM;
+  FireDAC.Comp.Client, Vcl.Buttons, uDM, frxClass, frxDBSet;
 
 type
   TfrmPesquisaPadrao = class(TForm)
@@ -28,6 +28,8 @@ type
     btnTransferir: TBitBtn;
     qryPesquisaPadrao: TFDQuery;
     dsPesquisaPadrao: TDataSource;
+    frxReport: TfrxReport;
+    frxDB: TfrxDBDataset;
     procedure btnPesquisarClick(Sender: TObject);
     procedure cbChavePesquisaChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -35,12 +37,15 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnTransferirClick(Sender: TObject);
     procedure DBGrid1DblClick(Sender: TObject);
+    procedure btnImprimirClick(Sender: TObject);
   private
     { Private declarations }
     FCodigo : Integer;
+    FNomeRelatorio : String;
   public
     { Public declarations }
     property Codigo: Integer read FCodigo write FCodigo;
+    property NomeRelatorio : String read FNomeRelatorio write FNomeRelatorio;
   end;
 
 var
@@ -49,6 +54,24 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmPesquisaPadrao.btnImprimirClick(Sender: TObject);
+var
+  Caminho : String;
+begin
+  Caminho := ExtractFilePath(Application.ExeName) + NomeRelatorio;
+
+  if frxReport.LoadFromFile(Caminho) then
+   begin
+    frxReport.Clear;
+    frxReport.LoadFromFile(Caminho);
+    frxReport.PrepareReport(True);
+    frxReport.ShowPreparedReport;
+   end
+  else
+   MessageDlg('Relatório não encontrado!' + #13 +
+   'Caminho: ' + QuotedStr(Caminho), mtError, [mbOK], 0);
+end;
 
 procedure TfrmPesquisaPadrao.btnPesquisarClick(Sender: TObject);
 begin

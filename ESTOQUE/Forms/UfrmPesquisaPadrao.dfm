@@ -348,6 +348,7 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       ParentFont = False
       TabOrder = 5
+      OnClick = btnImprimirClick
     end
     object btnTransferir: TBitBtn
       Left = 733
@@ -499,5 +500,34 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
     DataSet = qryPesquisaPadrao
     Left = 576
     Top = 80
+  end
+  object frxReport: TfrxReport
+    Version = '6.9.6'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick, pbCopy, pbSelection]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 44281.757615891210000000
+    ReportOptions.LastChange = 44281.757615891210000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 752
+    Top = 176
+    Datasets = <>
+    Variables = <>
+    Style = <>
+  end
+  object frxDB: TfrxDBDataset
+    UserName = 'frxDBDataset1'
+    CloseDataSource = False
+    DataSet = qryPesquisaPadrao
+    BCDToCurrency = False
+    Left = 752
+    Top = 104
   end
 end

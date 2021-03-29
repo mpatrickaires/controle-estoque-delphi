@@ -8,7 +8,8 @@ uses
   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
-  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons, Vcl.Mask, Vcl.ExtCtrls;
+  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons, Vcl.Mask, Vcl.ExtCtrls,
+  frxClass, frxDBSet;
 
 type
   TfrmPesquisaUsuario = class(TfrmPesquisaPadrao)
@@ -18,6 +19,7 @@ type
     qryPesquisaPadraoCADASTRO: TDateField;
     procedure btnPesquisarClick(Sender: TObject);
     procedure btnTransferirClick(Sender: TObject);
+    procedure btnImprimirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -30,6 +32,12 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmPesquisaUsuario.btnImprimirClick(Sender: TObject);
+begin
+  NomeRelatorio := 'relUsuario.fr3';
+  inherited;
+end;
 
 procedure TfrmPesquisaUsuario.btnPesquisarClick(Sender: TObject);
 begin
