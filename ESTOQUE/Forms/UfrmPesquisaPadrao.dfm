@@ -347,7 +347,7 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
         FF35D8FF15D2FF05CFFF05CFFF15D2FF35D8FF65E1FFA7EEFFF2FCFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       ParentFont = False
-      TabOrder = 5
+      TabOrder = 6
       OnClick = btnImprimirClick
     end
     object btnTransferir: TBitBtn
@@ -461,7 +461,7 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
         614FA04B489A4547984253B1505EB65B75C07295CF93C3E3C1F6FBF6FFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       ParentFont = False
-      TabOrder = 6
+      TabOrder = 5
       OnClick = btnTransferirClick
     end
   end
