@@ -112,6 +112,7 @@ begin
   // Salva o registro
   trataBotoes;
   qryPadrao.Post;
+  qryPadrao.Refresh;
   MessageBox(Handle, 'Registro salvo com sucesso!', 'Gravar Registro',
   MB_ICONINFORMATION + MB_OK);
 end;

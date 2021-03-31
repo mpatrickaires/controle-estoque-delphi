@@ -1,0 +1,30 @@
+inherited frmPadraoMovimento: TfrmPadraoMovimento
+  Caption = 'Formul'#225'rio Padr'#227'o de Movimento'
+  ClientHeight = 521
+  ExplicitHeight = 550
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited Panel2: TPanel
+    Top = 464
+    inherited DBNavigator1: TDBNavigator
+      Hints.Strings = ()
+    end
+  end
+  object Panel3: TPanel [2]
+    Left = 0
+    Top = 57
+    Width = 827
+    Height = 110
+    Align = alTop
+    TabOrder = 2
+  end
+  object Panel4: TPanel [3]
+    Left = 0
+    Top = 394
+    Width = 827
+    Height = 70
+    Align = alBottom
+    TabOrder = 3
+    ExplicitTop = 328
+  end
+end

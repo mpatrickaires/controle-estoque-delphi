@@ -959,6 +959,7 @@ object frmPrincipal: TfrmPrincipal
         000000000000}
       Layout = blGlyphTop
       ParentFont = False
+      OnClick = btnEmpresaClick
     end
     object btnClientes: TSpeedButton
       Left = 212
@@ -1361,6 +1362,7 @@ object frmPrincipal: TfrmPrincipal
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       Layout = blGlyphTop
       ParentFont = False
+      OnClick = btnClientesClick
     end
     object btnFornecedores: TSpeedButton
       Left = 318
@@ -1892,6 +1894,7 @@ object frmPrincipal: TfrmPrincipal
         FF00FFFFFF00}
       Layout = blGlyphTop
       ParentFont = False
+      OnClick = btnFornecedoresClick
     end
     object btnProdutos: TSpeedButton
       Left = 424
@@ -2423,13 +2426,14 @@ object frmPrincipal: TfrmPrincipal
         000000000000}
       Layout = blGlyphTop
       ParentFont = False
+      OnClick = btnProdutosClick
     end
     object btnFormaPgto: TSpeedButton
       Left = 530
       Top = 0
       Width = 100
       Height = 90
-      Caption = '&Forma Pgto'
+      Caption = 'Fo&rma Pgto'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -2954,6 +2958,7 @@ object frmPrincipal: TfrmPrincipal
         FF00FFFFFF00}
       Layout = blGlyphTop
       ParentFont = False
+      OnClick = btnFormaPgtoClick
     end
     object btnCompras: TSpeedButton
       Left = 636
@@ -4419,12 +4424,12 @@ object frmPrincipal: TfrmPrincipal
       Layout = blGlyphTop
       ParentFont = False
     end
-    object btnFechar: TSpeedButton
+    object btnSair: TSpeedButton
       Left = 954
       Top = 0
       Width = 100
       Height = 90
-      Caption = '&Fechar'
+      Caption = '&Sair'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -4820,7 +4825,7 @@ object frmPrincipal: TfrmPrincipal
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       Layout = blGlyphTop
       ParentFont = False
-      OnClick = btnFecharClick
+      OnClick = btnSairClick
     end
   end
   object StatusBar1: TStatusBar
@@ -4851,21 +4856,33 @@ object frmPrincipal: TfrmPrincipal
       Caption = 'Cadastro'
       object Usurio1: TMenuItem
         Caption = '&Usu'#225'rio'
+        ShortCut = 16469
+        OnClick = Usurio1Click
       end
       object Empresa1: TMenuItem
         Caption = '&Empresa'
+        ShortCut = 16453
+        OnClick = Empresa1Click
       end
       object Cliente1: TMenuItem
         Caption = '&Clientes'
+        ShortCut = 16451
+        OnClick = Cliente1Click
       end
       object Fornecedores1: TMenuItem
         Caption = '&Fornecedores'
+        ShortCut = 16454
+        OnClick = Fornecedores1Click
       end
       object Produtos1: TMenuItem
         Caption = '&Produtos'
+        ShortCut = 16464
+        OnClick = Produtos1Click
       end
       object FormadePgto1: TMenuItem
         Caption = '&Forma de Pgto'
+        ShortCut = 16454
+        OnClick = FormadePgto1Click
       end
     end
     object Movimentos1: TMenuItem

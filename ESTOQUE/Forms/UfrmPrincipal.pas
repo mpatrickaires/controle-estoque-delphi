@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Buttons, Vcl.ExtCtrls, Vcl.ComCtrls,
-  Vcl.Menus, Vcl.StdCtrls, UfrmProduto, UfrmFormaPgto;
+  Vcl.Menus, Vcl.StdCtrls, UfrmProduto, UfrmFormaPgto, UfrmCompra;
 
 type
   TfrmPrincipal = class(TForm)
@@ -41,12 +41,13 @@ type
     ListaCompras1: TMenuItem;
     ListaVendas1: TMenuItem;
     Sobre1: TMenuItem;
-    procedure abreTelaUsuario;
-    procedure abreTelaEmpresa;
-    procedure abreTelaCliente;
-    procedure abreTelaFornecedor;
-    procedure abreTelaProduto;
-    procedure abreTelaFormaPgto;
+    procedure AbreTelaUsuario;
+    procedure AbreTelaEmpresa;
+    procedure AbreTelaCliente;
+    procedure AbreTelaFornecedor;
+    procedure AbreTelaProduto;
+    procedure AbreTelaFormaPgto;
+    procedure AbreTelaCompra;
     procedure Timer1Timer(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure btnSairClick(Sender: TObject);
@@ -63,6 +64,7 @@ type
     procedure Produtos1Click(Sender: TObject);
     procedure btnFormaPgtoClick(Sender: TObject);
     procedure FormadePgto1Click(Sender: TObject);
+    procedure btnComprasClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -85,17 +87,17 @@ end;
 
 procedure TfrmPrincipal.Cliente1Click(Sender: TObject);
 begin
-  abreTelaCliente;
+  AbreTelaCliente;
 end;
 
 procedure TfrmPrincipal.Empresa1Click(Sender: TObject);
 begin
-  abreTelaEmpresa;
+  AbreTelaEmpresa;
 end;
 
 procedure TfrmPrincipal.FormadePgto1Click(Sender: TObject);
 begin
-  abreTelaFormaPgto;
+  AbreTelaFormaPgto;
 end;
 
 procedure TfrmPrincipal.FormCreate(Sender: TObject);
@@ -107,15 +109,15 @@ end;
 
 procedure TfrmPrincipal.Fornecedores1Click(Sender: TObject);
 begin
-  abreTelaFornecedor;
+  AbreTelaFornecedor;
 end;
 
 procedure TfrmPrincipal.Produtos1Click(Sender: TObject);
 begin
-  abreTelaProduto;
+  AbreTelaProduto;
 end;
 
-procedure TfrmPrincipal.abreTelaFormaPgto;
+procedure TfrmPrincipal.AbreTelaFormaPgto;
 var
   ObjFrmFormaPgto : TfrmFormaPgto;
 begin
@@ -128,7 +130,7 @@ begin
   end;
 end;
 
-procedure TfrmPrincipal.abreTelaCliente;
+procedure TfrmPrincipal.AbreTelaCliente;
 var
   ObjFrmCliente : TfrmCliente;
 begin
@@ -141,7 +143,20 @@ begin
   end;
 end;
 
-procedure TfrmPrincipal.abreTelaEmpresa;
+procedure TfrmPrincipal.AbreTelaCompra;
+var
+  ObjFrmCompra : TfrmCompra;
+begin
+  ObjFrmCompra := TfrmCompra.Create(nil);
+
+  try
+   ObjFrmCompra.ShowModal;
+  finally
+   ObjFrmCompra.Free;
+  end;
+end;
+
+procedure TfrmPrincipal.AbreTelaEmpresa;
 var
   ObjFrmEmpresa : TfrmEmpresa;
 begin
@@ -154,7 +169,7 @@ begin
   end;
 end;
 
-procedure TfrmPrincipal.abreTelaFornecedor;
+procedure TfrmPrincipal.AbreTelaFornecedor;
 var
   ObjFrmFornecedor : TfrmFornecedor;
 begin
@@ -167,7 +182,7 @@ begin
   end;
 end;
 
-procedure TfrmPrincipal.abreTelaProduto;
+procedure TfrmPrincipal.AbreTelaProduto;
 var
   ObjFrmProduto : TfrmProduto;
 begin
@@ -180,7 +195,7 @@ begin
   end;
 end;
 
-procedure TfrmPrincipal.abreTelaUsuario;
+procedure TfrmPrincipal.AbreTelaUsuario;
 var
   ObjFrmUsuario : TfrmUsuario;
 begin
@@ -195,27 +210,32 @@ end;
 
 procedure TfrmPrincipal.btnClientesClick(Sender: TObject);
 begin
-  abreTelaCliente;
+  AbreTelaCliente;
+end;
+
+procedure TfrmPrincipal.btnComprasClick(Sender: TObject);
+begin
+  AbreTelaCompra;
 end;
 
 procedure TfrmPrincipal.btnEmpresaClick(Sender: TObject);
 begin
-  abreTelaEmpresa;
+  AbreTelaEmpresa;
 end;
 
 procedure TfrmPrincipal.btnFormaPgtoClick(Sender: TObject);
 begin
-  abreTelaFormaPgto;
+  AbreTelaFormaPgto;
 end;
 
 procedure TfrmPrincipal.btnFornecedoresClick(Sender: TObject);
 begin
-  abreTelaFornecedor;
+  AbreTelaFornecedor;
 end;
 
 procedure TfrmPrincipal.btnProdutosClick(Sender: TObject);
 begin
-  abreTelaProduto;
+  AbreTelaProduto;
 end;
 
 procedure TfrmPrincipal.btnSairClick(Sender: TObject);
@@ -231,7 +251,7 @@ end;
 
 procedure TfrmPrincipal.btnUsuarioClick(Sender: TObject);
 begin
-  abreTelaUsuario;
+  AbreTelaUsuario;
 end;
 
 procedure TfrmPrincipal.Timer1Timer(Sender: TObject);
@@ -244,7 +264,7 @@ end;
 
 procedure TfrmPrincipal.Usurio1Click(Sender: TObject);
 begin
-  abreTelaUsuario;
+  AbreTelaUsuario;
 end;
 
 end.

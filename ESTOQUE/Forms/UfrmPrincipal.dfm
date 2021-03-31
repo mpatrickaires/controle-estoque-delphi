@@ -3490,6 +3490,7 @@ object frmPrincipal: TfrmPrincipal
         000000000000}
       Layout = blGlyphTop
       ParentFont = False
+      OnClick = btnComprasClick
     end
     object btnVendas: TSpeedButton
       Left = 742

@@ -139,10 +139,6 @@
             <Form>frmFormaPgto</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="..\Forms\UfrmPesquisaPadrao.pas">
-            <Form>frmPesquisaPadrao</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
         <DCCReference Include="..\Forms\UfrmPesquisaUsuario.pas">
             <Form>frmPesquisaUsuario</Form>
             <FormType>dfm</FormType>
@@ -157,6 +153,18 @@
         </DCCReference>
         <DCCReference Include="..\Forms\UfrmPesquisaProduto.pas">
             <Form>frmPesquisaProduto</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\Forms\UfrmPesquisaPadrao.pas">
+            <Form>frmPesquisaPadrao</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\Forms\UfrmPadraoMovimento.pas">
+            <Form>frmPadraoMovimento</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\Forms\UfrmCompra.pas">
+            <Form>frmCompra</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
@@ -185,7 +193,7 @@
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="3">
-                <DeployFile LocalName="M:\sistema-estoque-delphi_udemy\ESTOQUE\EXE\Controle_Estoque.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="..\EXE\Controle_Estoque.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>Controle_Estoque.exe</RemoteName>
                         <Overwrite>true</Overwrite>

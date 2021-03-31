@@ -1,7 +1,5 @@
 inherited frmPesquisaProduto: TfrmPesquisaProduto
   Caption = 'Pesquisa de Produtos'
-  ExplicitWidth = 952
-  ExplicitHeight = 525
   PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel

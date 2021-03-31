@@ -11,11 +11,13 @@ uses
   UfrmFornecedor in '..\Forms\UfrmFornecedor.pas' {frmFornecedor},
   UfrmProduto in '..\Forms\UfrmProduto.pas' {frmProduto},
   UfrmFormaPgto in '..\Forms\UfrmFormaPgto.pas' {frmFormaPgto},
-  UfrmPesquisaPadrao in '..\Forms\UfrmPesquisaPadrao.pas' {frmPesquisaPadrao},
   UfrmPesquisaUsuario in '..\Forms\UfrmPesquisaUsuario.pas' {frmPesquisaUsuario},
   UfrmPesquisaCliente in '..\Forms\UfrmPesquisaCliente.pas' {frmPesquisaCliente},
   UfrmPesquisaFornecedor in '..\Forms\UfrmPesquisaFornecedor.pas' {frmPesquisaFornecedor},
-  UfrmPesquisaProduto in '..\Forms\UfrmPesquisaProduto.pas' {frmPesquisaProduto};
+  UfrmPesquisaProduto in '..\Forms\UfrmPesquisaProduto.pas' {frmPesquisaProduto},
+  UfrmPesquisaPadrao in '..\Forms\UfrmPesquisaPadrao.pas' {frmPesquisaPadrao},
+  UfrmPadraoMovimento in '..\Forms\UfrmPadraoMovimento.pas' {frmPadraoMovimento},
+  UfrmCompra in '..\Forms\UfrmCompra.pas' {frmCompra};
 
 {$R *.res}
 
