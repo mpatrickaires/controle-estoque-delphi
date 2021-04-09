@@ -6,6 +6,7 @@ inherited frmPadraoMovimento: TfrmPadraoMovimento
   TextHeight = 13
   inherited Panel2: TPanel
     Top = 464
+    ExplicitTop = 464
     inherited DBNavigator1: TDBNavigator
       Left = 447
       Top = 6
@@ -17,7 +18,7 @@ inherited frmPadraoMovimento: TfrmPadraoMovimento
       ExplicitWidth = 380
       ExplicitHeight = 45
     end
-    object BitBtn1: TBitBtn
+    object btnItem: TBitBtn
       Left = 24
       Top = 6
       Width = 92
@@ -129,9 +130,8 @@ inherited frmPadraoMovimento: TfrmPadraoMovimento
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       ParentFont = False
       TabOrder = 1
-      OnClick = btnNovoClick
     end
-    object BitBtn2: TBitBtn
+    object btnOk: TBitBtn
       Left = 122
       Top = 6
       Width = 92
@@ -243,9 +243,8 @@ inherited frmPadraoMovimento: TfrmPadraoMovimento
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       ParentFont = False
       TabOrder = 2
-      OnClick = btnNovoClick
     end
-    object BitBtn3: TBitBtn
+    object btnExcluir: TBitBtn
       Left = 220
       Top = 6
       Width = 92
@@ -357,9 +356,8 @@ inherited frmPadraoMovimento: TfrmPadraoMovimento
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       ParentFont = False
       TabOrder = 3
-      OnClick = btnNovoClick
     end
-    object BitBtn4: TBitBtn
+    object btnImprimir: TBitBtn
       Left = 318
       Top = 6
       Width = 92
@@ -471,7 +469,6 @@ inherited frmPadraoMovimento: TfrmPadraoMovimento
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       ParentFont = False
       TabOrder = 4
-      OnClick = btnNovoClick
     end
   end
   object Panel3: TPanel [2]
@@ -493,7 +490,6 @@ inherited frmPadraoMovimento: TfrmPadraoMovimento
     Color = 13298927
     ParentBackground = False
     TabOrder = 3
-    ExplicitTop = 328
   end
   object DBGrid1: TDBGrid [4]
     Left = 0

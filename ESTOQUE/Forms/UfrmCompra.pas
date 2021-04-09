@@ -54,7 +54,13 @@ type
     edtDesconto: TDBEdit;
     Label13: TLabel;
     edtTotalItem: TDBEdit;
+    qryProduto: TFDQuery;
+    qryPadraoItemDESCRICAO: TStringField;
+    qryPadraoItemSUBTOTAL: TAggregateField;
     procedure btnNovoClick(Sender: TObject);
+    procedure btnItemClick(Sender: TObject);
+    procedure edtIDProdutoExit(Sender: TObject);
+    procedure btnOkClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -68,6 +74,22 @@ implementation
 
 {$R *.dfm}
 
+procedure TfrmCompra.btnItemClick(Sender: TObject);
+var
+  Proximo : Integer;
+begin
+  inherited;
+  qryPadraoItem.Open;
+  qryPadraoItem.Last;
+
+  Proximo := qryPadraoItemID_SEQUENCIA.AsInteger + 1;
+
+  qryPadraoItem.Append;
+  qryPadraoItemID_SEQUENCIA.AsInteger := Proximo;
+
+  edtIDProduto.SetFocus;
+end;
+
 procedure TfrmCompra.btnNovoClick(Sender: TObject);
 begin
   inherited;
@@ -76,6 +98,43 @@ begin
   edtValor.Text := IntToStr(0);
 
   edtIDFornecedor.SetFocus;
+end;
+
+procedure TfrmCompra.btnOkClick(Sender: TObject);
+begin
+  inherited;
+  qryPadrao.Edit;
+  qryPadraoVALOR.AsFloat := qryPadraoItem.AggFields.FieldByName('SUBTOTAL').Value;
+  qryPadrao.Post;
+end;
+
+procedure TfrmCompra.edtIDProdutoExit(Sender: TObject);
+begin
+  inherited;
+  if (qryPadraoItemID_PRODUTO.AsInteger > 0) then
+    if (qryProduto.Locate('ID_PRODUTO', qryPadraoItem.FieldByName('ID_PRODUTO').AsInteger, [])) then
+     begin
+      qryPadraoItemQTDE.AsFloat := 1;
+
+      qryPadraoItemDESCONTO.AsFloat := 0;
+
+      // Pega o valor do produto
+      qryPadraoItemVL_CUSTO.AsFloat := qryProduto.FieldByName('VL_CUSTO').AsFloat;
+
+      // Soma a quantidade
+      qryPadraoItemTOTAL_ITEM.AsFloat := (qryPadraoItemQTDE.AsFloat * qryPadraoItemVL_CUSTO.AsFloat)
+       - (qryPadraoItemDESCONTO.AsFloat);
+
+      qryPadraoItem.Post;
+     end
+
+  else
+   begin
+    MessageDlg('Produto não encontrado!', mtWarning, [mbOK], 0);
+    qryPadraoItem.Cancel;
+   end;
+
+  btnItem.SetFocus;
 end;
 
 end.

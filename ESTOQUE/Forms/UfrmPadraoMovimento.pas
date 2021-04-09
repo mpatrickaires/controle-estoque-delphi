@@ -15,12 +15,13 @@ type
     Panel3: TPanel;
     Panel4: TPanel;
     DBGrid1: TDBGrid;
-    BitBtn1: TBitBtn;
-    BitBtn2: TBitBtn;
-    BitBtn3: TBitBtn;
-    BitBtn4: TBitBtn;
+    btnItem: TBitBtn;
+    btnOk: TBitBtn;
+    btnExcluir: TBitBtn;
+    btnImprimir: TBitBtn;
     qryPadraoItem: TFDQuery;
     dsPadraoItem: TDataSource;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -33,5 +34,12 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmPadraoMovimento.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  inherited;
+  qryPadraoItem.Close;
+end;
 
 end.

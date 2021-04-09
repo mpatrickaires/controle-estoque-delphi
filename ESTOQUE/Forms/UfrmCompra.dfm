@@ -4,9 +4,14 @@ inherited frmCompra: TfrmCompra
   TextHeight = 13
   inherited Panel2: TPanel
     TabOrder = 3
-    ExplicitTop = 464
     inherited DBNavigator1: TDBNavigator
       Hints.Strings = ()
+    end
+    inherited btnItem: TBitBtn
+      OnClick = btnItemClick
+    end
+    inherited btnOk: TBitBtn
+      OnClick = btnOkClick
     end
   end
   inherited Panel3: TPanel
@@ -147,14 +152,13 @@ inherited frmCompra: TfrmCompra
       Top = 24
       Width = 172
       Height = 21
-      DataField = 'VALOR'
-      DataSource = dsPadrao
+      DataField = 'SUBTOTAL'
+      DataSource = dsPadraoItem
       TabOrder = 3
     end
   end
   inherited Panel4: TPanel
     TabOrder = 2
-    ExplicitTop = 394
     object Label9: TLabel
       Left = 24
       Top = 16
@@ -203,6 +207,7 @@ inherited frmCompra: TfrmCompra
       DataField = 'ID_PRODUTO'
       DataSource = dsPadraoItem
       TabOrder = 0
+      OnExit = edtIDProdutoExit
     end
     object edtQuantidade: TDBEdit
       Left = 164
@@ -263,6 +268,12 @@ inherited frmCompra: TfrmCompra
       end
       item
         Expanded = False
+        FieldName = 'DESCRICAO'
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
         FieldName = 'QTDE'
         Visible = True
       end
@@ -283,6 +294,7 @@ inherited frmCompra: TfrmCompra
       end>
   end
   inherited qryPadrao: TFDQuery
+    Active = True
     UpdateOptions.AssignedValues = [uvFetchGeneratorsPoint, uvGeneratorName]
     UpdateOptions.FetchGeneratorsPoint = gpImmediate
     UpdateOptions.GeneratorName = 'GEN_ID_TBLCOMPRA'
@@ -300,10 +312,13 @@ inherited frmCompra: TfrmCompra
       'WHERE A.ID_FORNECEDOR = B.ID_FORNECEDOR'
       'AND A.ID_FORMA_PGTO = C.ID_FORMA_PGTO'
       'ORDER BY A.ID_COMPRA')
+    Left = 264
+    Top = 232
     object qryPadraoID_COMPRA: TFDAutoIncField
       FieldName = 'ID_COMPRA'
       Origin = 'ID_COMPRA'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object qryPadraoID_FORNECEDOR: TIntegerField
       FieldName = 'ID_FORNECEDOR'
@@ -350,9 +365,14 @@ inherited frmCompra: TfrmCompra
       Required = True
     end
   end
+  inherited dsPadrao: TDataSource
+    Left = 264
+    Top = 312
+  end
   inherited qryPadraoItem: TFDQuery
     Active = True
     IndexFieldNames = 'ID_COMPRA'
+    AggregatesActive = True
     MasterFields = 'ID_COMPRA'
     DetailFields = 'ID_COMPRA'
     Connection = DM.Conexao
@@ -366,6 +386,8 @@ inherited frmCompra: TfrmCompra
       '       A.TOTAL_ITEM '
       'FROM TBLITEM_COMPRA A'
       'WHERE A.ID_COMPRA = :pId_Compra')
+    Left = 360
+    Top = 232
     ParamData = <
       item
         Name = 'PID_COMPRA'
@@ -420,5 +442,40 @@ inherited frmCompra: TfrmCompra
       Precision = 18
       Size = 2
     end
+    object qryPadraoItemDESCRICAO: TStringField
+      FieldKind = fkLookup
+      FieldName = 'DESCRICAO'
+      LookupDataSet = qryProduto
+      LookupKeyFields = 'ID_PRODUTO'
+      LookupResultField = 'PRODUTO_DESCRICAO'
+      KeyFields = 'ID_PRODUTO'
+      Size = 100
+      Lookup = True
+    end
+    object qryPadraoItemSUBTOTAL: TAggregateField
+      FieldName = 'SUBTOTAL'
+      Active = True
+      currency = True
+      DisplayName = ''
+      Expression = 'SUM(TOTAL_ITEM)'
+    end
+  end
+  inherited dsPadraoItem: TDataSource
+    Left = 360
+    Top = 312
+  end
+  object qryProduto: TFDQuery
+    Active = True
+    Connection = DM.Conexao
+    SQL.Strings = (
+      'SELECT ID_PRODUTO,'
+      '       PRODUTO_DESCRICAO,'
+      '       ESTOQUE,'
+      '       ESTOQUE_MIN,'
+      '       VL_CUSTO'
+      'FROM TBLPRODUTO'
+      'ORDER BY ID_PRODUTO')
+    Left = 456
+    Top = 232
   end
 end
