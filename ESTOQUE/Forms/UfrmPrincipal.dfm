@@ -23,6 +23,7 @@ object frmPrincipal: TfrmPrincipal
     Width = 1184
     Height = 90
     Align = alTop
+    BevelOuter = bvNone
     Color = 13298927
     ParentBackground = False
     TabOrder = 0

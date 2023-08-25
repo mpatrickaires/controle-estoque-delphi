@@ -4,7 +4,7 @@ inherited frmUsuario: TfrmUsuario
   ExplicitHeight = 371
   PixelsPerInch = 96
   TextHeight = 13
-  object Label1: TLabel [0]
+  object lbIdUser: TLabel [0]
     Left = 120
     Top = 88
     Width = 63
@@ -12,7 +12,7 @@ inherited frmUsuario: TfrmUsuario
     Caption = 'ID_USUARIO'
     FocusControl = edtID
   end
-  object Label2: TLabel [1]
+  object lbName: TLabel [1]
     Left = 120
     Top = 128
     Width = 29
@@ -20,7 +20,7 @@ inherited frmUsuario: TfrmUsuario
     Caption = 'NOME'
     FocusControl = edtNome
   end
-  object Label3: TLabel [2]
+  object lbPassword: TLabel [2]
     Left = 120
     Top = 168
     Width = 33
@@ -28,14 +28,14 @@ inherited frmUsuario: TfrmUsuario
     Caption = 'SENHA'
     FocusControl = edtSenha
   end
-  object Label4: TLabel [3]
+  object lbTipePeople: TLabel [3]
     Left = 341
     Top = 168
     Width = 24
     Height = 13
     Caption = 'TIPO'
   end
-  object Label5: TLabel [4]
+  object lbRegister: TLabel [4]
     Left = 562
     Top = 168
     Width = 55

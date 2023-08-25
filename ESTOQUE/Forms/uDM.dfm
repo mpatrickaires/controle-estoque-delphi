@@ -1,20 +1,16 @@
 object DM: TDM
   OldCreateOrder = False
-  Height = 318
-  Width = 560
+  Height = 230
+  Width = 336
   object Conexao: TFDConnection
     Params.Strings = (
-      
-        'Database=M:\aprendizado-delphi\sistema-estoque-delphi_udemy\ESTO' +
-        'QUE\EXE\BANCO\ESTOQUE.FDB'
       'User_Name=SYSDBA'
       'Password=masterkey'
-      'Server=localhost'
-      'Protocol=TCPIP'
-      'Port=3050'
       'CharacterSet=WIN1252'
+      
+        'Database=C:\Sidemar\Estudos\delphi\controle-estoque-delphi\compi' +
+        'le\DATA\DATABASE.FDB'
       'DriverID=FB')
-    Connected = True
     LoginPrompt = False
     Left = 32
     Top = 24
@@ -24,8 +20,13 @@ object DM: TDM
     Left = 120
     Top = 24
   end
-  object FDPhysFBDriverLink1: TFDPhysFBDriverLink
+  object FBDriverLink: TFDPhysFBDriverLink
     Left = 232
     Top = 24
+  end
+  object WaitCursor: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 40
+    Top = 120
   end
 end

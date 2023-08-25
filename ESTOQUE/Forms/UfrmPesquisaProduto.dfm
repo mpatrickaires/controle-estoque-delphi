@@ -69,7 +69,6 @@ inherited frmPesquisaProduto: TfrmPesquisaProduto
       end>
   end
   inherited qryPesquisaPadrao: TFDQuery
-    Active = True
     SQL.Strings = (
       'SELECT A.ID_PRODUTO, '
       '       A.PRODUTO_DESCRICAO,'
