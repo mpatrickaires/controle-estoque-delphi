@@ -1,5 +1,0 @@
-inherited frmPesquisaCliente: TfrmPesquisaCliente
-  Caption = 'Pesquisa de Clientes'
-  PixelsPerInch = 96
-  TextHeight = 13
-end

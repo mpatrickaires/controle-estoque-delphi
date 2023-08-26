@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/04/09 23:46:28.000.867,=C:\Users\sidem_lno9uva\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/04/13 22:56:40.000.621,=C:\Users\sidem_lno9uva\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/04/15 22:21:49.000.715,=C:\Users\sidem_lno9uva\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/08/26 01:05:17.866,=C:\Users\sidem_lno9uva\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/08/26 01:06:07.481,C:\Users\sidem_lno9uva\OneDrive\Área de Trabalho\controle-estoque-delphi\src\View\uView.PDV.Main.pas=C:\Users\sidem_lno9uva\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/08/26 01:06:07.481,C:\Users\sidem_lno9uva\OneDrive\Área de Trabalho\controle-estoque-delphi\src\View\uView.PDV.Main.dfm=C:\Users\sidem_lno9uva\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2023/08/26 01:06:42.626,C:\Users\sidem_lno9uva\OneDrive\Área de Trabalho\controle-estoque-delphi\project\PDV\PDV.dproj=C:\Users\sidem_lno9uva\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

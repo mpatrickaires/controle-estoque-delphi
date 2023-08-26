@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{E885923C-DA26-408F-B614-0C36EC74F105}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Retaguarda\Retaguarda_Controlle.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="PDV\PDV.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Retaguarda_Controlle">
+        <MSBuild Projects="Retaguarda\Retaguarda_Controlle.dproj"/>
+    </Target>
+    <Target Name="Retaguarda_Controlle:Clean">
+        <MSBuild Projects="Retaguarda\Retaguarda_Controlle.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Retaguarda_Controlle:Make">
+        <MSBuild Projects="Retaguarda\Retaguarda_Controlle.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PDV">
+        <MSBuild Projects="PDV\PDV.dproj"/>
+    </Target>
+    <Target Name="PDV:Clean">
+        <MSBuild Projects="PDV\PDV.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PDV:Make">
+        <MSBuild Projects="PDV\PDV.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Retaguarda_Controlle;PDV"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Retaguarda_Controlle:Clean;PDV:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Retaguarda_Controlle:Make;PDV:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
