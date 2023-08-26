@@ -3,7 +3,7 @@
         <ProjectGuid>{E885923C-DA26-408F-B614-0C36EC74F105}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="Retaguarda\Controle_Estoque.dproj">
+        <Projects Include="Retaguarda\Retaguarda_Controlle.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="PDV\PDV.dproj">
@@ -17,14 +17,14 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="Controle_Estoque">
-        <MSBuild Projects="Retaguarda\Controle_Estoque.dproj"/>
+    <Target Name="Retaguarda_Controlle">
+        <MSBuild Projects="Retaguarda\Retaguarda_Controlle.dproj"/>
     </Target>
-    <Target Name="Controle_Estoque:Clean">
-        <MSBuild Projects="Retaguarda\Controle_Estoque.dproj" Targets="Clean"/>
+    <Target Name="Retaguarda_Controlle:Clean">
+        <MSBuild Projects="Retaguarda\Retaguarda_Controlle.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="Controle_Estoque:Make">
-        <MSBuild Projects="Retaguarda\Controle_Estoque.dproj" Targets="Make"/>
+    <Target Name="Retaguarda_Controlle:Make">
+        <MSBuild Projects="Retaguarda\Retaguarda_Controlle.dproj" Targets="Make"/>
     </Target>
     <Target Name="PDV">
         <MSBuild Projects="PDV\PDV.dproj"/>
@@ -36,13 +36,13 @@
         <MSBuild Projects="PDV\PDV.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="Controle_Estoque;PDV"/>
+        <CallTarget Targets="Retaguarda_Controlle;PDV"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="Controle_Estoque:Clean;PDV:Clean"/>
+        <CallTarget Targets="Retaguarda_Controlle:Clean;PDV:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="Controle_Estoque:Make;PDV:Make"/>
+        <CallTarget Targets="Retaguarda_Controlle:Make;PDV:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

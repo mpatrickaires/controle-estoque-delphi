@@ -1,17 +1,14 @@
 program PDV;
 
-{$APPTYPE CONSOLE}
+uses
+  Vcl.Forms,
+  uView.PDV.Main in '..\..\src\View\uView.PDV.Main.pas' {TPDVMainView};
 
 {$R *.res}
 
-uses
-  System.SysUtils;
-
 begin
-  try
-    { TODO -oUser -cConsole Main : Insert code here }
-  except
-    on E: Exception do
-      Writeln(E.ClassName, ': ', E.Message);
-  end;
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TPDVMainView, PDVMainView);
+  Application.Run;
 end.
